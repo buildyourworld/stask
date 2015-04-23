@@ -1,0 +1,26 @@
+.main_content
+	#recipe_top.row
+		#recipe_info
+			%h1= @recipe.title
+			%p.description= @recipe.description
+
+	.row
+		.col-md-6
+			#informations
+				%h2 Informations
+				%ul
+					- @recipe.informations.each do |information|
+						%li= information.url
+
+		.col-md-6
+			#directions
+				%h2 Tips
+				%ul
+					- @recipe.directions.each do |direction|
+						%li= direction.step
+
+	.row
+		.col-md-12
+			= link_to "Back", root_path, class: "btn btn-default"
+			= link_to "Edit", edit_recipe_path, class: "btn btn-default"
+			= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
