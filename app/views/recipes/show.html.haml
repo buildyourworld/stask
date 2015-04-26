@@ -8,12 +8,16 @@
 		.col-md-6
 			#informations
 				%h2 Informations
+				= form_for @info, url: add_info_recipe_path do |f|
+					%p= f.text_field 'url'
+					%p= button_to "submit"
 				%ul
 					- @recipe.informations.order(:cached_votes_up).reverse.each do |information|
 						%li= link_to "#{information.url}", information.url, target: :_blank
 						%li= information.get_upvotes.size
 						%li= link_to "upvote", upvote_info_path(information.id)
 						%li= link_to "downvote", downvote_info_path(information.id)
+
 		.col-md-6
 			#directions
 				%h2 Tips
