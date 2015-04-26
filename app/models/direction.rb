@@ -1,3 +1,4 @@
 class Direction < ActiveRecord::Base
-  belongs_to :recipe
+	acts_as_votable
+	belongs_to :recipe
 end

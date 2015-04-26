@@ -21,9 +21,15 @@
 		.col-md-6
 			#directions
 				%h2 Tips
+				= form_for @direction, url: add_direction_recipe_path do |f|
+					%p= f.text_field 'step'
+					%p= button_to "submit"
 				%ul
 					- @recipe.directions.each do |direction|
-						%li= direction.step
+						%li= direction.get_upvotes.size
+						%li= link_to "upvote", upvote_direction_path(direction.id)
+						%li= link_to "downvote", downvote_direction_path(direction.id)
+
 
 	.row
 		.col-md-12
