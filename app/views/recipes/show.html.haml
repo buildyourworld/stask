@@ -10,7 +10,7 @@
 				%h2 Informations
 				%ul
 					- @recipe.informations.order(:cached_votes_up).reverse.each do |information|
-						%li= information.url
+						%li= link_to "#{information.url}", information.url, target: :_blank
 						%li= information.get_upvotes.size
 						%li= link_to "upvote", upvote_info_path(information.id)
 						%li= link_to "downvote", downvote_info_path(information.id)
