@@ -1,3 +1,4 @@
+= console
 .main_content
 	#recipe_top.row
 		#recipe_info
@@ -12,7 +13,7 @@
 					%p= f.text_field 'url'
 					%p= button_to "submit"
 				%ul
-					- @recipe.informations.order(:cached_votes_up).reverse.each do |information|
+					- @information_all.order(:cached_votes_up).reverse.each do |information|
 						%li= link_to "#{information.url}", information.url, target: :_blank
 						%li= information.get_upvotes.size
 						%li= link_to "upvote", upvote_info_path(information.id)
@@ -25,7 +26,8 @@
 					%p= f.text_field 'step'
 					%p= button_to "submit"
 				%ul
-					- @recipe.directions.each do |direction|
+					- @direction_all.each do |direction|
+						%li= direction.step
 						%li= direction.get_upvotes.size
 						%li= link_to "upvote", upvote_direction_path(direction.id)
 						%li= link_to "downvote", downvote_direction_path(direction.id)

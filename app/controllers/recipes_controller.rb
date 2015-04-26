@@ -8,6 +8,9 @@ class RecipesController < ApplicationController
 	def show
 		@info = @recipe.informations.build
 		@direction = @recipe.directions.build
+
+		@information_all = @recipe.informations.where.not(id: nil)
+		@direction_all = @recipe.directions.where.not(id: nil)
 	end
 
 	def new
