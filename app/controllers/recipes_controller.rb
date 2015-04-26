@@ -38,6 +38,18 @@ class RecipesController < ApplicationController
 		redirect_to root_path, notice: "Successfully deleted recipe"
 	end
 
+	def upvote_info
+		@info = Information.find(params[:id])
+		@info.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote_info
+		@info = Information.find(params[:id])
+		@info.downvote_from current_user
+		redirect_to :back
+	end
+
 	private
 
 	def recipe_params

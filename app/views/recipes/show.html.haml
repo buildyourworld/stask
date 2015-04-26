@@ -11,6 +11,9 @@
 				%ul
 					- @recipe.informations.each do |information|
 						%li= information.url
+						%li= information.get_upvotes.size
+						%li= link_to "upvote", upvote_info_path(information.id)
+						%li= link_to "downvote", downvote_info_path(information.id)
 
 		.col-md-6
 			#directions
