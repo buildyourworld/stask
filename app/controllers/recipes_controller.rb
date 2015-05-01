@@ -2,7 +2,12 @@ class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy, :add_info, :add_direction]
 	before_action :authenticate_user!, except: [:index, :show]
 	def index
-		@recipe = Recipe.all.order("created_at DESC")
+		if params[:category].blank?
+			@recipes = Recipe.all.order("created_at DESC")
+		else
+			@category_id = Category.find_by(name: params[:category]).id
+			@recipes = Recipe.where(category_id: @category_id).order("created_at DESC")
+		end
 	end
 
 	def show
@@ -82,7 +87,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, informations_attributes: [:id, :url, :_destroy], directions_attributes: [:id, :step, :_destroy])
+		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :url, :_destroy], directions_attributes: [:id, :step, :_destroy])
 	end
 
 	def find_recipe

@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-
+	belongs_to :category
 	has_many :informations
 	has_many :directions
 	belongs_to :user
