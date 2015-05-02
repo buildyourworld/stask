@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get "upvote_direction/:id", to: "recipes#upvote_direction", as: "upvote_direction"
   get "downvote_direction/:id", to: "recipes#downvote_direction", as: "downvote_direction"
   
+  post "contrelien/:info_id", to: "recipes#add_contreinfo", as: "add_contreinfo"
+
   root "recipes#index"
 end

@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 	def show
 		@info = @recipe.informations.build
 		@direction = @recipe.directions.build
-
+		@contrelien = Contrelien.new
 		@information_all = @recipe.informations.where.not(id: nil)
 		@direction_all = @recipe.directions.where.not(id: nil)
 	end
@@ -75,6 +75,13 @@ class RecipesController < ApplicationController
 	def add_info
 		@new_info = @recipe.informations.build(url: params[:information][:url]) #, recipe_id: @recipe.id
 		@new_info.save
+		redirect_to :back
+	end
+
+	def add_contreinfo
+		@information = Information.find(params[:info_id]) 
+		@new_contreinfo = @information.contrelien.new(url: params[:contrelien][:url])
+		@new_contreinfo.save
 		redirect_to :back
 	end
 

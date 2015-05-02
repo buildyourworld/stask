@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501201614) do
+ActiveRecord::Schema.define(version: 20150502202030) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contreliens", force: :cascade do |t|
+    t.string   "url"
+    t.integer  "contrelien_poly_id"
+    t.string   "contrelien_poly_type"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "directions", force: :cascade do |t|
