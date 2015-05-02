@@ -15,15 +15,18 @@
 							= information.get_upvotes.size
 							= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
 							= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
-							= link_to "+"
+							%button{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
 							%br
 							- information.contrelien.each do |contre|
 								%ul
 									%li
 										= link_to "#{contre.url}", contre.url, target: :_blank
-							= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
-								%p= c.text_field 'url', placeholder: 'add url'
-								%p= button_to "ADD"
+							.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
+								.modal-dialog.modal-sm
+									.modal-content
+										= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
+											%p= c.text_field 'url', placeholder: 'add url'
+											%p= button_to "ADD"
 
 				%h4
 				= form_for @info, url: add_info_recipe_path do |f|
