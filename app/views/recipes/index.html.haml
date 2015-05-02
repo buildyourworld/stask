@@ -2,6 +2,6 @@
 	- Category.all.each do |category|
 		%h2= link_to category.name, recipes_path(category: category.name)
 
-%div.col-md-6#recipeslist 
+%div.col-md-6#recipeslist
 	- @recipes.each do |recipe|
 		%h2= link_to recipe.title, recipe
