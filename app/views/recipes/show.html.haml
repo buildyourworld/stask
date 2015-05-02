@@ -10,10 +10,11 @@
 				%h4 Informations
 				%ul
 					- @information_all.order(:cached_votes_up).reverse.each do |information|
-						= link_to "#{information.url}", information.url, target: :_blank
-						= information.get_upvotes.size
-						= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
-						= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
+						%div
+							= link_to "#{information.url}", information.url, target: :_blank
+							= information.get_upvotes.size
+							= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
+							= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
 				%h4
 				= form_for @info, url: add_info_recipe_path do |f|
 					%p= f.text_field 'url', placeholder:'Add information'
@@ -23,10 +24,11 @@
 				%h4 Tips
 				%ul
 					- @direction_all.each do |direction|
-						= direction.step
-						= direction.get_upvotes.size
-						= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
-						= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
+						%div
+							= direction.step
+							= direction.get_upvotes.size
+							= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
+							= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
 				%h4
 				= form_for @direction, url: add_direction_recipe_path do |f|
 					%p= f.text_field 'step', placeholder:'Add tips'
