@@ -1,4 +1,3 @@
-= console
 .main_content
 	#recipe_top.row
 		#recipe_info
@@ -8,34 +7,35 @@
 	.row
 		.col-md-6
 			#informations
-				%h2 Informations
-				= form_for @info, url: add_info_recipe_path do |f|
-					%p= f.text_field 'url'
-					%p= button_to "submit"
+				%h4 Informations
 				%ul
 					- @information_all.order(:cached_votes_up).reverse.each do |information|
-						%li= link_to "#{information.url}", information.url, target: :_blank
-						%li= information.get_upvotes.size
-						%li= link_to "upvote", upvote_info_path(information.id)
-						%li= link_to "downvote", downvote_info_path(information.id)
-
+						= link_to "#{information.url}", information.url, target: :_blank
+						= information.get_upvotes.size
+						= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
+						= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
+				%h4
+				= form_for @info, url: add_info_recipe_path do |f|
+					%p= f.text_field 'url', placeholder:'Add information'
+					%p= button_to "Add information"
 		.col-md-6
 			#directions
-				%h2 Tips
-				= form_for @direction, url: add_direction_recipe_path do |f|
-					%p= f.text_field 'step'
-					%p= button_to "submit"
+				%h4 Tips
 				%ul
 					- @direction_all.each do |direction|
-						%li= direction.step
-						%li= direction.get_upvotes.size
-						%li= link_to "upvote", upvote_direction_path(direction.id)
-						%li= link_to "downvote", downvote_direction_path(direction.id)
-
+						= direction.step
+						= direction.get_upvotes.size
+						= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
+						= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
+				%h4
+				= form_for @direction, url: add_direction_recipe_path do |f|
+					%p= f.text_field 'step', placeholder:'Add tips'
+					%p= button_to "Add tips"
 
 	.row
-		.col-md-12
-			= link_to "Back", root_path, class: "btn btn-default"	
-			- if user_signed_in?
-				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
-				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+		#backedit
+			.col-md-12
+				= link_to "Back", root_path, class: "btn btn-default"	
+				- if user_signed_in?
+					= link_to "Edit", edit_recipe_path, class: "btn btn-default"
+					= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"

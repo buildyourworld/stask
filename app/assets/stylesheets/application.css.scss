@@ -16,3 +16,50 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// index
+
+#categorieslist {
+}
+
+
+#recipeslist {
+	
+}
+
+// new theme
+
+.form-control {
+	width: 50%;
+}
+
+// show
+
+h1 {
+	text-align: center;
+} 
+
+.btn-default {
+	color: black;
+	border: none;
+	background-color: transparent;
+}
+
+input[type="submit"] {
+	color: black;
+	border: none;
+	background-color: transparent;
+}
+
+#new_information {
+	margin-top: 30px;
+}
+
+#new_direction {
+	margin-top: 30px;
+}
+
+#backedit {
+	margin-top: 300px;
+}
+
