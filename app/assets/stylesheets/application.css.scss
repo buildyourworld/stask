@@ -17,7 +17,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// index
+/* all */
+
+a {
+	color: #0f2350;
+}
+
+body {
+	background-color: #e5e4e6;
+}
+
+/* index */
 
 #categorieslist {
 	text-align: center;
@@ -28,7 +38,26 @@
 	text-align: center;
 }
 
-// new theme
+/* navbar */
+
+.navbar-default {
+	border-bottom: 1px solid #cd5e3c;
+	background-color: #dcdddd;
+}
+
+.navbar-default .navbar-nav li a {
+	color: #0f2350;
+}
+
+
+/* screen */
+
+#screen {
+	background-color: transparent;
+	height: 450px;
+}
+
+/* new theme */
 
 .form-control {
 	width: 50%;
@@ -76,7 +105,7 @@ ul {
 	list-style: none;
 }
 
-//modal
+/* modal */
 
 #new_contrelien {
 	vertical-align: middle;

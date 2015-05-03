@@ -1,3 +1,6 @@
+.container#screen
+
+
 %div.col-md-6#categorieslist
 	- Category.all.each do |category|
 		%h2= link_to category.name, recipes_path(category: category.name)
