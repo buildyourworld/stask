@@ -19,7 +19,7 @@
 
 /* all */
 
-a {
+h1, h4, a {
 	color: #0f2350;
 }
 
@@ -39,6 +39,10 @@ body {
 }
 
 /* navbar */
+
+.navbar-brand a {
+	color: #cd5e3c;
+}
 
 .navbar-default {
 	border-bottom: 1px solid #cd5e3c;
@@ -63,7 +67,7 @@ body {
 	width: 50%;
 }
 
-// show
+/* show */
 
 h1 {
 	text-align: center;
@@ -73,8 +77,16 @@ h1 {
 	text-align: center;
 }
 
+#informationslist {
+	margin-top: 50px;
+}
+
 #directions {
 	text-align: center;
+}
+
+#directionslist {
+	margin-top: 50px;
 }
 
 .btn-default {
@@ -105,8 +117,17 @@ ul {
 	list-style: none;
 }
 
+div.button.glyphicon.glyphicon-alert {
+	cursor: pointer;
+	color:#0f2350;
+}
+
 /* modal */
 
 #new_contrelien {
 	vertical-align: middle;
+}
+
+input#contrelien_url {
+	margin-top: 10px;
 }
