@@ -20,11 +20,12 @@
 // index
 
 #categorieslist {
+	text-align: center;
 }
 
 
 #recipeslist {
-	
+	text-align: center;
 }
 
 // new theme
@@ -38,6 +39,14 @@
 h1 {
 	text-align: center;
 } 
+
+#informations {
+	text-align: center;
+}
+
+#directions {
+	text-align: center;
+}
 
 .btn-default {
 	color: black;
@@ -63,3 +72,12 @@ input[type="submit"] {
 	margin-top: 300px;
 }
 
+ul {
+	list-style: none;
+}
+
+//modal
+
+#new_contrelien {
+	vertical-align: middle;
+}
