@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require social_share
  */
 
 @import "bootstrap-sprockets";
@@ -60,6 +61,17 @@ body {
 	background-color: transparent;
 	height: 450px;
 }
+
+#catchphrase {
+	text-align:center;
+}
+
+#catchphrase a {
+	line-height: 8em;
+	font-size: 3em;
+	cursor: pointer;
+}
+
 
 /* new theme */
 
@@ -121,6 +133,7 @@ div.button.glyphicon.glyphicon-alert {
 	cursor: pointer;
 	color:#0f2350;
 }
+
 
 /* modal */
 

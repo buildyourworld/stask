@@ -3,8 +3,8 @@
 		#recipe_info
 			.row
 				%h1= @recipe.title
-				%p share
-			%p.description= @recipe.description
+				%div= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
+				%p.description= @recipe.description
 
 	.row
 		.col-md-6

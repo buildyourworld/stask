@@ -1,0 +1,28 @@
+/*
+*= require social_share
+*/
+
+div.social-share {
+	display: table-caption;
+	margin-left: 5px;
+}
+
+a.ss-button.ss-facebook-share-button {
+	background: transparent;
+}
+
+a.ss-button.ss-twitter-share-button {
+	background: transparent;
+}
+
+a.ss-button.ss-google-plus-share-button {
+	background: transparent;
+}
+
+a.ss-button.ss-reddit-share-button {
+	background: transparent;
+}
+
+a.ss-more-button {
+	display: none;
+}
