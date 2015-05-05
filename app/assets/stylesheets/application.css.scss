@@ -18,6 +18,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 /* all */
 
 h1, h4, a {
@@ -25,7 +26,7 @@ h1, h4, a {
 }
 
 body {
-	background-color: #e5e4e6;
+	background-color: #eaf4fc;
 }
 
 /* index */
@@ -41,14 +42,77 @@ body {
 
 /* navbar */
 
+nav.navbar.navbar-default {
+	background-color: transparent;
+	border: transparent;
+}
+
 .navbar-brand a {
 	color: #cd5e3c;
 }
 
-.navbar-default {
-	border-bottom: 1px solid #cd5e3c;
-	background-color: #dcdddd;
+#home {
+	/*border-bottom: 1px solid #cd5e3c;*/
+	border:none;
+	background-color: transparent;
+	width: 50px;
+	height: 150px;
+	position: fixed;
+	margin-left: 30px;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 50%;
 }
+
+#home ul li {
+	height: 2em;
+}
+
+#home a {
+	line-height: 3.5em;
+	color: #cd5e3c;
+	font-size: 2em;
+}
+
+#signin {
+	/*border-bottom: 1px solid #cd5e3c;*/
+	border:none;
+	background-color: transparent;
+	width: 50px;
+	height: 150px;
+	position: fixed;
+	margin-left: 100px;
+	margin-top: 100px;
+}
+
+#signin ul li {
+	height: 1em;
+}
+
+#signin a {
+	font-size: 1.5em;
+}
+
+#signup {
+	/*border-bottom: 1px solid #cd5e3c;*/
+	border:none;
+	background-color: transparent;
+	width: 50px;
+	height: 150px;
+	position: fixed;
+	margin-left: 140px;
+	margin-top: 140px;
+}
+
+#signup ul li {
+	height: 1em;
+}
+
+
+#signup a {
+	font-size: 1.5em;
+}
+
 
 .navbar-default .navbar-nav li a {
 	color: #0f2350;
@@ -66,10 +130,11 @@ body {
 	text-align:center;
 }
 
-#catchphrase a {
+#catchphrase p {
 	line-height: 8em;
 	font-size: 3em;
 	cursor: pointer;
+	color: #0f2350;
 }
 
 
@@ -99,6 +164,14 @@ h1 {
 
 #directionslist {
 	margin-top: 50px;
+}
+
+input#information_url {
+	background-color: #eaf4fc;
+}
+
+input#direction_step {
+	background-color: #eaf4fc;
 }
 
 .btn-default {
@@ -143,4 +216,23 @@ div.button.glyphicon.glyphicon-alert {
 
 input#contrelien_url {
 	margin-top: 10px;
+}
+
+/* footer */
+
+footer {
+	height: 100px;
+	background-color: #ebf6f7;
+	margin-top: 50px;
+}
+
+div#footer.container {
+	margin-top: 20px;
+	display: -webkit-inline-box;
+	text-align: center;
+}
+
+div#footer.container p {
+	margin-right: 20px;
+	color: #0f2350;
 }

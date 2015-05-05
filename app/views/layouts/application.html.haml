@@ -7,18 +7,43 @@
 	= csrf_meta_tags
 
 %body
-	%nav.navbar.navbar-default
-		.container
-			.navbar-brand= link_to "Staskstact", root_path
+	%nav.navbar.navbar-default#home
+		%ul
+			%li= link_to "S", root_path
+			%li= link_to "t", root_path
+			%li= link_to "a", root_path
+			%li= link_to "s", root_path
+			%li= link_to "k", root_path
+			%li= link_to "s", root_path
+			%li= link_to "t", root_path
+			%li= link_to "a", root_path
+			%li= link_to "c", root_path
+			%li= link_to "t", root_path
 
-			- if user_signed_in?
-				%ul.nav.navbar-nav.navbar-right
-					%li= link_to "New Theme", new_recipe_path
-					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
-			- else
-				%ul.nav.navbar-nav.navbar-right
-					%li= link_to "Sign Up", new_user_registration_path
-					%li= link_to "Sign In", new_user_session_path
+	%nav.navbar.navbar-default
+		- if user_signed_in?
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to "New Theme", new_recipe_path
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+		- else
+			%ul.nav.navbar-nav.navbar-right#signup
+				%li= link_to "S", new_user_registration_path
+				%li= link_to "i", new_user_registration_path
+				%li= link_to "g", new_user_registration_path
+				%li= link_to "n", new_user_registration_path
+				%li= link_to "", new_user_registration_path
+				%li= link_to "u", new_user_registration_path
+				%li= link_to "p", new_user_registration_path
+			%ul.nav.navbar-nav.navbar-right#signin
+				%li= link_to "S", new_user_session_path
+				%li= link_to "i", new_user_session_path
+				%li= link_to "g", new_user_session_path
+				%li= link_to "n", new_user_session_path
+				%li= link_to "", new_user_session_path
+				%li= link_to "i", new_user_session_path
+				%li= link_to "n", new_user_session_path
+
 						
 	.container
 		- flash.each do |name, msg|
@@ -26,3 +51,11 @@
 
 
 		= yield
+
+%footer
+	.container#footer
+		%p AeM
+		%p facebook
+		%p twitter
+		%p feedback
+		%p support
