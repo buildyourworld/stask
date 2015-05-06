@@ -23,10 +23,19 @@
 
 h1, h4, a {
 	color: #0f2350;
+	font-family: Futura;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 body {
 	background-color: #eaf4fc;
+}
+
+#backedit a {
+	color: #0f2350;
 }
 
 /* index */
@@ -42,80 +51,21 @@ body {
 
 /* navbar */
 
-nav.navbar.navbar-default {
-	background-color: transparent;
-	border: transparent;
+.navbar {
+	background-color: #eaf4fc;
+	border-bottom: 1px solid #cd5e3c;
+	border-radius: none;
 }
 
 .navbar-brand a {
 	color: #cd5e3c;
+	text-decoration: none;
+	font-family: Futura;
 }
-
-#home {
-	/*border-bottom: 1px solid #cd5e3c;*/
-	border:none;
-	background-color: transparent;
-	width: 50px;
-	height: 150px;
-	position: fixed;
-	margin-left: 30px;
-	margin-top: 20px;
-	text-align: center;
-	line-height: 50%;
-}
-
-#home ul li {
-	height: 2em;
-}
-
-#home a {
-	line-height: 3.5em;
-	color: #cd5e3c;
-	font-size: 2em;
-}
-
-#signin {
-	/*border-bottom: 1px solid #cd5e3c;*/
-	border:none;
-	background-color: transparent;
-	width: 50px;
-	height: 150px;
-	position: fixed;
-	margin-left: 100px;
-	margin-top: 100px;
-}
-
-#signin ul li {
-	height: 1em;
-}
-
-#signin a {
-	font-size: 1.5em;
-}
-
-#signup {
-	/*border-bottom: 1px solid #cd5e3c;*/
-	border:none;
-	background-color: transparent;
-	width: 50px;
-	height: 150px;
-	position: fixed;
-	margin-left: 140px;
-	margin-top: 140px;
-}
-
-#signup ul li {
-	height: 1em;
-}
-
-
-#signup a {
-	font-size: 1.5em;
-}
-
 
 .navbar-default .navbar-nav li a {
 	color: #0f2350;
+	font-family: Futura;
 }
 
 
@@ -135,6 +85,7 @@ nav.navbar.navbar-default {
 	font-size: 3em;
 	cursor: pointer;
 	color: #0f2350;
+	font-family: Futura;
 }
 
 
@@ -149,6 +100,10 @@ nav.navbar.navbar-default {
 h1 {
 	text-align: center;
 } 
+
+#recipe_info {
+	margin-top: 70px
+}
 
 #informations {
 	text-align: center;
@@ -227,12 +182,13 @@ footer {
 }
 
 div#footer.container {
+	margin-left: 610px;
 	margin-top: 20px;
 	display: -webkit-inline-box;
-	text-align: center;
 }
 
 div#footer.container p {
 	margin-right: 20px;
 	color: #0f2350;
+	font-family: Futura;
 }

@@ -3,24 +3,40 @@
 */
 
 div.social-share {
-	display: table-caption;
-	margin-left: 5px;
+	display: block;
+	margin-left: 650px;
 }
 
 a.ss-button.ss-facebook-share-button {
 	background: transparent;
 }
 
+.ss-icon-facebook {
+	color: #0f2350;
+}
+
 a.ss-button.ss-twitter-share-button {
 	background: transparent;
+}
+
+.ss-icon-twitter {
+	color: #0f2350;
 }
 
 a.ss-button.ss-google-plus-share-button {
 	background: transparent;
 }
 
+.ss-icon-google-plus {
+	color: #0f2350;
+}
+
 a.ss-button.ss-reddit-share-button {
 	background: transparent;
+}
+
+.ss-icon-reddit {
+	color: #0f2350;
 }
 
 a.ss-more-button {
