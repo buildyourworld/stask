@@ -21,6 +21,22 @@
 
 /* all */
 
+.main_content {
+	margin-top: 80px;
+}
+
+
+input.btn.btn-default {
+	color: #0f2350;
+	font-family: Futura;
+}
+
+.btn-default:hover {
+	background-color: transparent;
+	border-color: transparent;
+	color: #0f2350;
+}
+
 h1, h4, a {
 	color: #0f2350;
 	font-family: Futura;
@@ -31,7 +47,7 @@ a:hover {
 }
 
 body {
-	background-color: #eaf4fc;
+	background-color: #ebf6f7;
 }
 
 #backedit a {
@@ -101,16 +117,34 @@ h1 {
 	text-align: center;
 } 
 
-#recipe_info {
-	margin-top: 70px
-}
-
 #informations {
 	text-align: center;
 }
 
-#informationslist {
+#info {
 	margin-top: 50px;
+	display: -webkit-inline-box;
+}
+
+#votes {
+	margin-right: 15px;
+}
+
+#contrebutton {
+	margin-left: 15px;
+}
+
+#linkinfo a {
+	color: #3eb370;
+}
+
+#contrelien {
+	color: #ee827c;
+	margin-top: 5px;
+}
+
+#contrelien a {
+	color: #ee827c;
 }
 
 #directions {
@@ -121,12 +155,20 @@ h1 {
 	margin-top: 50px;
 }
 
+#directionslist div {
+	margin-top: 10px;
+}
+
+#tips {
+	display: -webkit-inline-box;
+}
+
 input#information_url {
-	background-color: #eaf4fc;
+	background-color: #ebf6f7;
 }
 
 input#direction_step {
-	background-color: #eaf4fc;
+	background-color: #ebf6f7;
 }
 
 .btn-default {
@@ -136,7 +178,7 @@ input#direction_step {
 }
 
 input[type="submit"] {
-	color: black;
+	color: #0f2350;
 	border: none;
 	background-color: transparent;
 }
@@ -157,7 +199,7 @@ ul {
 	list-style: none;
 }
 
-div.button.glyphicon.glyphicon-alert {
+div.button.glyphicon.glyphicon-exclamation-sign {
 	cursor: pointer;
 	color:#0f2350;
 }
@@ -172,6 +214,10 @@ div.button.glyphicon.glyphicon-alert {
 input#contrelien_url {
 	margin-top: 10px;
 }
+
+/* new theme */
+
+
 
 /* footer */
 
