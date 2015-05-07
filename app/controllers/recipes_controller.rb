@@ -86,7 +86,7 @@ class RecipesController < ApplicationController
 	end
 
 	def add_direction
-		@new_direction = @recipe.directions.build(step: params[:direction][:step], url: params[:direction][:url]) #, recipe_id: @recipe.id
+		@new_direction = @recipe.directions.build(title: params[:direction][:title], url: params[:direction][:url], step: params[:direction][:step]) #, recipe_id: @recipe.id
 		@new_direction.save
 		redirect_to :back
 	end
@@ -94,7 +94,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :title, :url, :_destroy], directions_attributes: [:id, :step, :url, :_destroy])
+		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :title, :url, :_destroy], directions_attributes: [:id, :title, :url, :step, :_destroy])
 	end
 
 	def find_recipe

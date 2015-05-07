@@ -17,7 +17,7 @@
 			= link_to_add_association 'Add Information', f, :informations, class: "btn btn-default add-button"
 
 		= f.simple_fields_for :directions do |direction|
-			= render 'direction_fields', f, :direction
+			= render 'direction_fields', f: direction
 		.links
 			= link_to_add_association 'Add Astuces', f, :directions, class: "btn btn-default add-button"
 

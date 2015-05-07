@@ -52,12 +52,18 @@
 								= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
 								= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
 							%div#step
-								%if 
-								= direction.step
+								- unless direction.title.blank?
+									= link_to "#{direction.title}", direction.url, target: :_blank
+								- else
+									= direction.step
+
+								
 						%br
 				%h4
 				= form_for @direction, url: add_direction_recipe_path do |f|
-					%p= f.text_field 'step', placeholder:'Add astuces'
+					%p= f.text_field 'title', placeholder:'Add title'
+					%p= f.text_field 'url', placeholder:'Add url'
+					%p= f.text_field 'step', placeholder:'Add text'
 					%p= button_to "Add astuces"
 
 	.row
