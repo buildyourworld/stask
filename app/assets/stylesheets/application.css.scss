@@ -99,7 +99,6 @@ body {
 #catchphrase p {
 	line-height: 8em;
 	font-size: 3em;
-	cursor: pointer;
 	color: #0f2350;
 	font-family: Futura;
 }
@@ -234,6 +233,7 @@ div#footer.container {
 }
 
 div#footer.container p {
+	cursor: pointer;
 	margin-right: 20px;
 	color: #0f2350;
 	font-family: Futura;

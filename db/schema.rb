@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502202030) do
+ActiveRecord::Schema.define(version: 20150507193658) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150502202030) do
     t.string   "contrelien_poly_type"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "title"
   end
 
   create_table "directions", force: :cascade do |t|
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 20150502202030) do
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "url"
+    t.string   "title"
   end
 
   add_index "directions", ["recipe_id"], name: "index_directions_on_recipe_id"
@@ -48,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150502202030) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "title"
   end
 
   add_index "information", ["cached_votes_down"], name: "index_information_on_cached_votes_down"

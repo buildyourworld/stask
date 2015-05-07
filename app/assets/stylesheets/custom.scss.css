@@ -11,6 +11,22 @@ a.ss-button.ss-facebook-share-button {
 	background: transparent;
 }
 
+.social-share a.ss-facebook-share-button:hover {
+	background-color: transparent;
+}
+
+.social-share a.ss-twitter-share-button:hover {
+	background-color: transparent;
+}
+
+.social-share a.ss-google-plus-share-button:hover {
+	background-color: transparent;
+}
+
+.social-share a.ss-reddit-share-button:hover {
+	background-color: transparent;
+}
+
 .ss-icon-facebook {
 	color: #0f2350;
 }

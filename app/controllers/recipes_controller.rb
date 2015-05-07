@@ -73,20 +73,20 @@ class RecipesController < ApplicationController
 	end
 
 	def add_info
-		@new_info = @recipe.informations.build(url: params[:information][:url]) #, recipe_id: @recipe.id
+		@new_info = @recipe.informations.build(url: params[:information][:url], title: params[:information][:title]) #, recipe_id: @recipe.id
 		@new_info.save
 		redirect_to :back
 	end
 
 	def add_contreinfo
 		@information = Information.find(params[:info_id]) 
-		@new_contreinfo = @information.contrelien.new(url: params[:contrelien][:url])
+		@new_contreinfo = @information.contrelien.new(url: params[:contrelien][:url], title: params[:contrelien][:title])
 		@new_contreinfo.save
 		redirect_to :back
 	end
 
 	def add_direction
-		@new_direction = @recipe.directions.build(step: params[:direction][:step]) #, recipe_id: @recipe.id
+		@new_direction = @recipe.directions.build(step: params[:direction][:step], url: params[:direction][:url]) #, recipe_id: @recipe.id
 		@new_direction.save
 		redirect_to :back
 	end
@@ -94,7 +94,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :url, :_destroy], directions_attributes: [:id, :step, :_destroy])
+		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :title, :url, :_destroy], directions_attributes: [:id, :step, :url, :_destroy])
 	end
 
 	def find_recipe

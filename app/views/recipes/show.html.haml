@@ -18,7 +18,7 @@
 								= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
 								= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
 							%div#linkinfo
-								= link_to "#{information.url}", information.url, target: :_blank
+								= link_to "#{information.title}", information.url, target: :_blank
 							%div#contrebutton
 								.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
 							%br
@@ -26,18 +26,20 @@
 							- information.contrelien.each do |contre|
 								%ul
 									%li
-										= link_to "#{contre.url}", contre.url, target: :_blank
+										= link_to "#{contre.title}", contre.url, target: :_blank
 							.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
 								.modal-dialog.modal-sm
 									.modal-content
 										%p Adding a counterlink allow you to criticise the information provided by the belonging link
 										= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
+											%p= c.text_field 'title', placeholder: 'add title'
 											%p= c.text_field 'url', placeholder: 'add url'
 											%p= button_to "ADD"
 
 				%h4
 				= form_for @info, url: add_info_recipe_path do |f|
-					%p= f.text_field 'url', placeholder:'Add information'
+					%p= f.text_field 'title', placeholder:'Add a title'
+					%p= f.text_field 'url', placeholder:'Add an url'
 					%p= button_to "Add information"
 		.col-md-6
 			#directions
@@ -50,6 +52,7 @@
 								= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
 								= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
 							%div#step
+								%if 
 								= direction.step
 						%br
 				%h4
