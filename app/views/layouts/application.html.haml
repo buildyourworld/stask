@@ -23,7 +23,7 @@
 					%li= link_to "Sign in", new_user_session_path
 					
 						
-	.container
+	.container#carrousel
 		- flash.each do |name, msg|
 			= content_tag :div, msg, class: "alert"
 

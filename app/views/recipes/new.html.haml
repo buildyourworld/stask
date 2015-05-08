@@ -1,8 +1,10 @@
 .main_content
-	%h1 New Theme
+	.panel.panel-default
+		.panel-heading
+			%h1 New Theme
 
-	= render 'form'
+			= render 'form'
 
-	%br/
-
-	= link_to "Back", root_path, class: "btn btn-default"
+			%br/
+	#backedit
+		= link_to "Back", root_path, class: "btn btn-default"

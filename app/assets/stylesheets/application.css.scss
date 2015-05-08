@@ -18,6 +18,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.item.active {
+	background: url(image/whisp.png) no-repeat center center fixed;
+}
 
 /* all */
 
@@ -47,7 +50,7 @@ a:hover {
 }
 
 body {
-	background-color: #ebf6f7;
+	background-color: #fff;
 }
 
 #backedit a {
@@ -58,17 +61,19 @@ body {
 
 #categorieslist {
 	text-align: center;
+	margin-top: 80px;
 }
 
 
 #recipeslist {
 	text-align: center;
+	margin-top: 80px;
 }
 
 /* navbar */
 
 .navbar {
-	background-color: #eaf4fc;
+	background-color: #fff;
 	border-bottom: 1px solid #cd5e3c;
 	border-radius: none;
 }
@@ -87,16 +92,27 @@ body {
 
 /* screen */
 
+#carrousel {
+	padding-right: 0px;
+	padding-left: 0px;
+	width: 100%;
+}
+
 #screen {
 	background-color: transparent;
 	height: 450px;
+	width: 100%;
+	margin-right: none;
+	margin-left: none;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #catchphrase {
 	text-align:center;
 }
 
-#catchphrase p {
+p#catchphrase {
 	line-height: 8em;
 	font-size: 3em;
 	color: #0f2350;
@@ -108,6 +124,38 @@ body {
 
 .form-control {
 	width: 50%;
+}
+
+div.input.text.required.recipe_description {
+	margin-top: 25px;
+}
+
+label.string.optional {
+	margin-right: 25px;
+}
+
+label.url.optional {
+	margin-right: 35px;
+}
+
+label.text.optional {
+	margin-right: 25px;
+}
+
+#recipe_category_id {
+	margin-top: 25px;
+}
+
+.links {
+	margin-top: 20px;
+}
+
+div.links a {
+	color:#0f2350;
+}
+
+.nested-fields {
+	margin-top: 25px;
 }
 
 /* show */
@@ -162,14 +210,6 @@ h1 {
 	display: -webkit-inline-box;
 }
 
-input#information_url {
-	background-color: #ebf6f7;
-}
-
-input#direction_step {
-	background-color: #ebf6f7;
-}
-
 .btn-default {
 	color: black;
 	border: none;
@@ -190,9 +230,6 @@ input[type="submit"] {
 	margin-top: 30px;
 }
 
-#backedit {
-	margin-top: 300px;
-}
 
 ul {
 	list-style: none;

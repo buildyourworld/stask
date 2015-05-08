@@ -1,6 +1,25 @@
-.container#screen
-	%div#catchphrase
-		%p Share info share tips
+#screen
+	#this-carousel-id.carousel.slide
+		.carousel-inner
+			.item.active
+				%img{:alt => "", :src => "http://placehold.it/1300x500"}/
+				.carousel-caption
+					%p#catchphrase Share info share tips
+			.item
+				%img{:alt => "", :src => "http://placehold.it/1300x500"}/
+				.carousel-caption
+					%p Caption text here
+			.item
+				%img{:alt => "", :src => "http://placehold.it/1300x500"}/
+				.carousel-caption
+					%p Caption text here
+			.item
+				%img{:alt => "", :src => "http://placehold.it/1300x500"}/
+				.carousel-caption
+					%p Caption text here
+
+		%a.carousel-control.left{"data-slide" => "prev", :href => "#this-carousel-id"} ‹
+		%a.carousel-control.right{"data-slide" => "next", :href => "#this-carousel-id"} ›
 
 %div.col-md-6#categorieslist
 	- Category.all.each do |category|

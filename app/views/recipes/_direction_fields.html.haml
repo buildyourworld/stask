@@ -1,6 +1,7 @@
 .form-inline.clearflix
 	.nested-fields
-		= f.input :title, input_html: { class: "form-input form-control"}
-		= f.input :url, input_html: { class: "form-input form-control"}
-		= f.input :step, input_html: { class: "form-input form-control"}
+		= f.input :title, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+		= f.input :url, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+		%p or
+		= f.input :step, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
 		= link_to_remove_association "Remove", f, class: "form-button btn btn-default"

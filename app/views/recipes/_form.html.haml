@@ -20,5 +20,5 @@
 			= render 'direction_fields', f: direction
 		.links
 			= link_to_add_association 'Add Astuces', f, :directions, class: "btn btn-default add-button"
-
-	= f.button :submit, value:"Create Theme", class: "btn btn-default"
+	.panel-footer
+		= f.button :submit, value:"Create Theme", class: "btn btn-default"
