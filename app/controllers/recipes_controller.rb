@@ -19,11 +19,11 @@ class RecipesController < ApplicationController
 	end
 
 	def new
-		@recipe = current_user.recipes.build
+		@recipe = current_user.recipes.new
 	end
 
 	def create
-		@recipe = current_user.recipes.build(recipe_params)
+		@recipe = current_user.recipes.new(recipe_params)
 
 		if @recipe.save
 			redirect_to @recipe, notice: "Successfully created new recipe"

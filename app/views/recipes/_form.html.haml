@@ -10,7 +10,7 @@
 	.panel-body
 		= f.input :title, input_html: { class: 'form-control' }
 		= f.input :description, input_html: { class: 'form-control' }
-		=f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}
+		= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}
 		= f.simple_fields_for :informations do |information|
 			= render 'information_fields', f: information
 		.links
