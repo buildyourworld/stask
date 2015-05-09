@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   post "contrelien/:info_id", to: "recipes#add_contreinfo", as: "add_contreinfo"
 
   root "recipes#index"
+
+  delete "info/:id", to: "recipes#destroy_info", as: "delete_info"
+  delete "direction/:id", to: "recipes#destroy_direction", as: "delete_direction"
+  delete "contreinfo/:id", to: "recipes#destroy_contreinfo", as: "delete_contreinfo"
+
 end

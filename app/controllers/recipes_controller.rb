@@ -45,7 +45,24 @@ class RecipesController < ApplicationController
 
 	def destroy
 		@recipe.destroy
+		# @recipe.informations.destroy_all
+		# @recipe.directions.destroy_all
 		redirect_to root_path, notice: "Successfully deleted recipe"
+	end
+
+	def destroy_info
+		Information.find(params[:id]).destroy
+		redirect_to :back
+	end
+
+	def destroy_direction
+		Direction.find(params[:id]).destroy
+		redirect_to :back
+	end
+
+	def destroy_contreinfo
+		Contrelien.find(params[:id]).destroy
+		redirect_to :back
 	end
 
 	def upvote_info
@@ -73,20 +90,20 @@ class RecipesController < ApplicationController
 	end
 
 	def add_info
-		@new_info = @recipe.informations.build(url: params[:information][:url], title: params[:information][:title]) #, recipe_id: @recipe.id
+		@new_info = @recipe.informations.build(url: params[:information][:url], title: params[:information][:title], user_id: current_user.id) #, recipe_id: @recipe.id
 		@new_info.save
 		redirect_to :back
 	end
 
 	def add_contreinfo
 		@information = Information.find(params[:info_id]) 
-		@new_contreinfo = @information.contrelien.new(url: params[:contrelien][:url], title: params[:contrelien][:title])
+		@new_contreinfo = @information.contrelien.new(url: params[:contrelien][:url], title: params[:contrelien][:title], user_id: current_user.id)
 		@new_contreinfo.save
 		redirect_to :back
 	end
 
 	def add_direction
-		@new_direction = @recipe.directions.build(title: params[:direction][:title], url: params[:direction][:url], step: params[:direction][:step]) #, recipe_id: @recipe.id
+		@new_direction = @recipe.directions.build(title: params[:direction][:title], url: params[:direction][:url], step: params[:direction][:step], user_id: current_user.id) #, recipe_id: @recipe.id
 		@new_direction.save
 		redirect_to :back
 	end
@@ -94,7 +111,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :title, :url, :_destroy], directions_attributes: [:id, :title, :url, :step, :_destroy])
+		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :title, :url, :user_id, :_destroy], directions_attributes: [:id, :title, :user_id, :url, :step, :_destroy])
 	end
 
 	def find_recipe

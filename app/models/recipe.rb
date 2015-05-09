@@ -1,7 +1,7 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :category
-	has_many :informations
-	has_many :directions
+	has_many :informations, dependent: :destroy
+	has_many :directions, dependent: :destroy
 	belongs_to :user
 
 	accepts_nested_attributes_for :informations,
@@ -11,5 +11,13 @@ class Recipe < ActiveRecord::Base
 									reject_if: proc { |attributes| attributes['step'].blank? }, 
 									allow_destroy: true
 
-	validates :title, :description, presence: true
+	validates :title, presence: true
+
+	before_destroy :clear_features
+
+	private
+	def clear_features
+		informations.clear
+		directions.clear
+	end
 end

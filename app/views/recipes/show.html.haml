@@ -19,6 +19,7 @@
 								= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
 							%div#linkinfo
 								= link_to "#{information.title}", information.url, target: :_blank
+								= link_to "delete info", delete_info_path(information.id), method: :delete
 							%div#contrebutton
 								.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
 							%br
@@ -27,6 +28,7 @@
 								%ul
 									%li
 										= link_to "#{contre.title}", contre.url, target: :_blank
+										= link_to "delete contre", delete_contreinfo_path(contre.id), method: :delete
 							.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
 								.modal-dialog.modal-sm
 									.modal-content
@@ -56,6 +58,7 @@
 									= link_to "#{direction.title}", direction.url, target: :_blank
 								- else
 									= direction.step
+							= link_to "delete direction", delete_direction_path(direction.id), method: :delete
 
 								
 						%br

@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    has_many :recipes
+   has_many :directions
+   has_many :informations
+   has_many :contrelien, as: :contrelien_poly
 end
