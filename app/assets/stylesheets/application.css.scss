@@ -18,14 +18,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#signupform {
+	margin-bottom: 90px;
+}
 
-/* all */
+#signinform {
+	margin-bottom: 90px;
+}
 
-
-.container {
+div.container.row {
 	padding-left: 0px;
 	padding-right: 0px;
 	width: 100%;
+	margin-top: 50px;
 }
 
 .main_content {
@@ -65,7 +70,7 @@ body {
 .panel {
 	margin-left: 50px;
 	margin-right: 50px;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 .panel-heading {
@@ -96,7 +101,7 @@ body {
 }
 
 #navcontainer {
-	width: 80%;
+	width: 90%;
 }
 
 .navbar-brand a {
@@ -127,11 +132,11 @@ body {
 }
 
 #catchphrase {
-	text-align:center;
+	text-align: center;
 }
 
 p#catchphrase {
-	line-height: 7em;
+	line-height: 6em;
 	font-size: 3em;
 	color: #0f2350;
 	font-family: Futura;
@@ -295,18 +300,52 @@ input#contrelien_url {
 
 /* footer */
 
-div#footer {
+#footer {
 	margin-top: 20px;
-	display: -webkit-inline-box;
 	height: 100px;
 	background-color: #ebf6f7;
 	width: 100%;
 	text-align: center;
 }
 
-div#footer p {
+#footer a {
 	cursor: pointer;
 	margin-right: 20px;
 	color: #0f2350;
 	font-family: Futura;
+	line-height: 5em;
+
+}
+
+
+/* media queries extra-small */
+
+
+
+@media only screen and (max-width : 480px){
+	#categorieslist a {
+		font-size: .5em;
+	}
+
+	p#catchphrase {
+	font-size: 2em;
+	color: #0f2350;
+	font-family: Futura;
+	}
+}
+
+
+/* media queries small */
+
+@media only screen and (max-width : 768px){
+	#categorieslist a {
+		font-size: .75em;
+	}
+
+	p#catchphrase {
+	line-height: 3em;
+	font-size: 2em;
+	color: #0f2350;
+	font-family: Futura;
+	}
 }

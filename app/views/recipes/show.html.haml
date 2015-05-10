@@ -6,7 +6,7 @@
 			%p.description= @recipe.description
 
 	.panel-body
-		.col-md-6
+		.col-xs-6.col-md-6
 			#informations
 				%h4 Informations
 				%ul#informationslist
@@ -18,8 +18,9 @@
 								= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
 							%div#linkinfo
 								= link_to "#{information.title}", information.url, target: :_blank
-								- if current_user.id == information.user_id
-									= link_to "delete info", delete_info_path(information.id), method: :delete
+								- if user_signed_in?
+									- if current_user.id == information.user_id
+										= link_to "delete info", delete_info_path(information.id), method: :delete
 							%div#contrebutton
 								.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
 							%br
@@ -28,8 +29,9 @@
 								%ul
 									%li
 										= link_to "#{contre.title}", contre.url, target: :_blank
-										- if current_user.id == contre.user_id
-											= link_to "delete contre", delete_contreinfo_path(contre.id), method: :delete
+										- if user_signed_in?
+											- if current_user.id == contre.user_id
+												= link_to "delete contre", delete_contreinfo_path(contre.id), method: :delete
 							.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
 								.modal-dialog.modal-sm
 									.modal-content
@@ -47,7 +49,7 @@
 							%p= f.text_field 'title', placeholder:'Add a title'
 							%p= f.text_field 'url', placeholder:'Add an url'
 							%p= button_to "Add information"
-		.col-md-6
+		.col-xs-6.col-md-6
 			#directions
 				%h4 Astuces
 				%ul#directionslist
@@ -62,8 +64,9 @@
 									= link_to "#{direction.title}", direction.url, target: :_blank
 								- else
 									= direction.step
-							- if current_user.id == direction.user_id
-								= link_to "delete direction", delete_direction_path(direction.id), method: :delete
+							- if user_signed_in?
+								- if current_user.id == direction.user_id
+									= link_to "delete direction", delete_direction_path(direction.id), method: :delete
 
 								
 						%br
@@ -79,7 +82,8 @@
 
 	.panel-footer
 		#backedit
-			= link_to "Back", root_path, class: "btn btn-default"	
-			- if current_user.id == @recipe.user_id
-				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
-				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+			= link_to "Back", root_path, class: "btn btn-default"
+			- if user_signed_in?
+				- if current_user.id == @recipe.user_id
+					= link_to "Edit", edit_recipe_path, class: "btn btn-default"
+					= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
