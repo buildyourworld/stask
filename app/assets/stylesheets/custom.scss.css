@@ -2,9 +2,9 @@
 *= require social_share
 */
 
-div.social-share {
+.social-share {
 	display: block;
-	margin-left: 650px;
+	text-align: center;
 }
 
 a.ss-button.ss-facebook-share-button {

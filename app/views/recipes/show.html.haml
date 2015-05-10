@@ -1,12 +1,11 @@
-.panel-body.main_content
-	#recipe_top.row
+.panel
+	.panel-heading
 		#recipe_info
-			.row
-				%h1= @recipe.title
-				%div= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
-				%p.description= @recipe.description
+			%h1= @recipe.title
+			= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
+			%p.description= @recipe.description
 
-	.row
+	.panel-body
 		.col-md-6
 			#informations
 				%h4 Informations
@@ -38,11 +37,14 @@
 											%p= c.text_field 'url', placeholder: 'add url'
 											%p= button_to "ADD"
 
-				%h4
-				= form_for @info, url: add_info_recipe_path do |f|
-					%p= f.text_field 'title', placeholder:'Add a title'
-					%p= f.text_field 'url', placeholder:'Add an url'
-					%p= button_to "Add information"
+				%a.btn{"aria-controls" => "addonshowinfo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowinfo"}
+					Add an information
+				#addonshowinfo.collapse
+					.well#addonshowcollapsed
+						= form_for @info, url: add_info_recipe_path do |f|
+							%p= f.text_field 'title', placeholder:'Add a title'
+							%p= f.text_field 'url', placeholder:'Add an url'
+							%p= button_to "Add information"
 		.col-md-6
 			#directions
 				%h4 Astuces
@@ -62,14 +64,17 @@
 
 								
 						%br
-				%h4
-				= form_for @direction, url: add_direction_recipe_path do |f|
-					%p= f.text_field 'title', placeholder:'Add title'
-					%p= f.text_field 'url', placeholder:'Add url'
-					%p= f.text_field 'step', placeholder:'Add text'
-					%p= button_to "Add astuces"
+				%a.btn{"aria-controls" => "addonshowdirection", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowdirection"}
+					Add an astuce
+				#addonshowdirection.collapse
+					.well#addonshowcollapsed
+						= form_for @direction, url: add_direction_recipe_path do |f|
+							%p= f.text_field 'title', placeholder:'Add title'
+							%p= f.text_field 'url', placeholder:'Add url'
+							%p= f.text_field 'step', placeholder:'Add text'
+							%p= button_to "Add astuces"
 
-	.row
+	.panel-footer
 		#backedit
 			= link_to "Back", root_path, class: "btn btn-default"	
 			- if user_signed_in?

@@ -18,16 +18,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.item.active {
-	background: url(image/whisp.png) no-repeat center center fixed;
-}
 
 /* all */
 
-.main_content {
-	margin-top: 80px;
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 100%;
 }
 
+.main_content {
+	margin-top: 80px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
 
 input.btn.btn-default {
 	color: #0f2350;
@@ -57,17 +62,31 @@ body {
 	color: #0f2350;
 }
 
+.panel {
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 100px;
+}
+
+.panel-heading {
+	background-color: transparent;
+}
+
+.panel-footer {
+	background-color: transparent;
+	border: none;
+}
 /* index */
 
 #categorieslist {
 	text-align: center;
-	margin-top: 80px;
+	margin-top: 120px;
 }
 
 
 #recipeslist {
 	text-align: center;
-	margin-top: 80px;
+	margin-top: 120px;
 }
 
 /* navbar */
@@ -76,6 +95,10 @@ body {
 	background-color: #fff;
 	border-bottom: 1px solid #cd5e3c;
 	border-radius: none;
+}
+
+#navcontainer {
+	width: 1070px;
 }
 
 .navbar-brand a {
@@ -113,7 +136,7 @@ body {
 }
 
 p#catchphrase {
-	line-height: 8em;
+	line-height: 7em;
 	font-size: 3em;
 	color: #0f2350;
 	font-family: Futura;
@@ -240,6 +263,26 @@ div.button.glyphicon.glyphicon-exclamation-sign {
 	color:#0f2350;
 }
 
+#addonshow.collapse {
+	margin: auto;
+}
+
+#addonshow {
+	border: none;
+	background-color: transparent;
+	width: 30%;
+}
+
+#addonshowcollapsed {
+	min-height: 20px;
+	padding: 0px;
+	margin-bottom: 20px;
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
 
 /* modal */
 
@@ -257,19 +300,16 @@ input#contrelien_url {
 
 /* footer */
 
-footer {
-	height: 100px;
-	background-color: #ebf6f7;
-	margin-top: 50px;
-}
-
-div#footer.container {
-	margin-left: 610px;
+div#footer {
 	margin-top: 20px;
 	display: -webkit-inline-box;
+	height: 100px;
+	background-color: #ebf6f7;
+	width: 100%;
+	text-align: center;
 }
 
-div#footer.container p {
+div#footer p {
 	cursor: pointer;
 	margin-right: 20px;
 	color: #0f2350;
