@@ -8,17 +8,18 @@
 
 .row
 	%nav.navbar.navbar-default.navbar-fixed-top
-		.navbar-brand=link_to "Staskstact", root_path
-		- if user_signed_in?
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to "Sign Out", destroy_user_session_path, method: :delete
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to "New Theme", new_recipe_path
-		- else
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to "Sign up", new_user_registration_path
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to "Sign in", new_user_session_path
+		.container#navcontainer
+			.navbar-brand=link_to "Staskstact", root_path
+			- if user_signed_in?
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "New Theme", new_recipe_path
+			- else
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign up", new_user_registration_path
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign in", new_user_session_path
 
 	.container.row
 		- flash.each do |name, msg|

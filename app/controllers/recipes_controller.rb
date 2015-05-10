@@ -44,25 +44,42 @@ class RecipesController < ApplicationController
 	end
 
 	def destroy
-		@recipe.destroy
+		if current_user.id == @recipe.user_id
+			@recipe.destroy
+			redirect_to root_path, notice: "Successfully deleted recipe"
+		else
+			redirect_to :back, notice: "Not allowed"
+		end
 		# @recipe.informations.destroy_all
 		# @recipe.directions.destroy_all
-		redirect_to root_path, notice: "Successfully deleted recipe"
+		
 	end
 
 	def destroy_info
-		Information.find(params[:id]).destroy
-		redirect_to :back
+		if current_user.id == Information.find(params[:id]).user_id
+			Information.find(params[:id]).destroy
+			redirect_to :back
+		else
+			redirect_to :back, notice: "Not allowed"
+		end
 	end
 
 	def destroy_direction
-		Direction.find(params[:id]).destroy
-		redirect_to :back
+		if current_user.id == Direction.find(params[:id]).user_id
+			Direction.find(params[:id]).destroy
+			redirect_to :back
+		else
+			redirect_to :back, notice: "Not allowed"
+		end
 	end
 
 	def destroy_contreinfo
-		Contrelien.find(params[:id]).destroy
-		redirect_to :back
+		if current_user.id == Contrelien.find(params[:id]).user_id
+			Contrelien.find(params[:id]).destroy
+			redirect_to :back
+		else
+			redirect_to :back, notice: "Not allowed"
+		end
 	end
 
 	def upvote_info
