@@ -41,7 +41,7 @@ div.container.row {
 
 input.btn.btn-default {
 	color: #0f2350;
-	font-family: Futura;
+	font-family: Avenir;
 }
 
 .btn-default:hover {
@@ -52,7 +52,7 @@ input.btn.btn-default {
 
 h1, h4, a {
 	color: #0f2350;
-	font-family: Futura;
+	font-family: Avenir;
 }
 
 a:hover {
@@ -65,6 +65,7 @@ body {
 
 #backedit a {
 	color: #0f2350;
+	margin-top: 30px;
 }
 
 .panel {
@@ -118,7 +119,7 @@ body {
 
 .navbar-default .navbar-nav li a {
 	color: #0f2350;
-	font-family: Futura;
+	font-family: Avenir;
 }
 
 
@@ -129,6 +130,10 @@ body {
 }
 
 a.carousel-control.left {
+	opacity: 0;
+}
+
+a.carousel-control.right {
 	opacity: 0;
 }
 
@@ -196,6 +201,14 @@ div.links a {
 h1 {
 	text-align: center;
 } 
+
+div.description a {
+	font-family: Avenir;
+}
+
+#showlist {
+	margin-top: 40px;
+}
 
 #informations {
 	text-align: center;
@@ -311,7 +324,7 @@ input#contrelien_url {
 /* footer */
 
 #footer {
-	margin-top: 80px;
+	margin-top: 50px;
 	height: 100px;
 	background-color: #ebf6f7;
 	width: 100%;
@@ -322,7 +335,7 @@ input#contrelien_url {
 	cursor: pointer;
 	margin-right: 20px;
 	color: #0f2350;
-	font-family: Futura;
+	font-family: Avenir;
 	line-height: 5em;
 
 }
@@ -335,6 +348,10 @@ input#contrelien_url {
 @media only screen and (max-width : 480px){
 	#categorieslist a {
 		font-size: .5em;
+	}
+
+	#recipeslist {
+		font-size: .75em;
 	}
 
 	p#catchphrase {
