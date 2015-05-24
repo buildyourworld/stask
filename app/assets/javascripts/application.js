@@ -29,3 +29,11 @@
   });
 </script>*/
 
+function toggleDiv(informationslist) {
+   $("#"+informationslist).toggle();
+}
+
+function toggleDiv(directionslist) {
+   $("#"+directionslist).toggle();
+}
+
