@@ -12,12 +12,12 @@
 		= f.input :description, input_html: { class: 'form-control' }
 		= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}
 		= f.simple_fields_for :informations do |information|
-			= render 'information_fields', f: information
+			= render 'information_fields', :f => information
 		.links
 			= link_to_add_association 'Add Information', f, :informations, class: "btn btn-default add-button"
 
 		= f.simple_fields_for :directions do |direction|
-			= render 'direction_fields', f: direction
+			= render 'direction_fields', :f => direction
 		.links
 			= link_to_add_association 'Add Astuces', f, :directions, class: "btn btn-default add-button"
 	.panel-footer
