@@ -24,12 +24,41 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = current_user.recipes.new(recipe_params)
+		@recipe.save
 
-		if @recipe.save
-			redirect_to @recipe, notice: "Successfully created new recipe"
-		else
-			render 'new'
+		info_arr = []
+		if not params[:recipe]["informations_attributes"].nil?
+			z = params[:recipe]["informations_attributes"].keys.count
+			x = 0
+			while x < z
+				key = params[:recipe]["informations_attributes"].keys[x]
+				value = params[:recipe]["informations_attributes"][key]
+				info_arr.push(value)
+				#puts "infooooo"
+				#puts info_arr[0]
+				#puts info_arr[x]["title"]
+				@recipe.informations.new(title: info_arr[x]["title"]).save
+			  	x = x +1
+			end
 		end
+
+		direct_arr = []
+		if not params[:recipe]["directions_attributes"].nil?
+			z_z = params[:recipe]["directions_attributes"].keys.count
+			x_x = 0
+			while x_x < z_z
+				key_key = params[:recipe]["directions_attributes"].keys[x_x]
+				value_v = params[:recipe]["directions_attributes"][key_key]
+				direct_arr.push(value_v)
+				# puts "directionsssss"
+				# puts direct_arr.first["title"]
+				@recipe.directions.new(title: direct_arr[x_x]["title"]).save
+			  	x_x = x_x +1
+			end
+		end		
+
+		redirect_to recipe_path(@recipe.id)
+
 	end
 
 	def edit
