@@ -2,6 +2,8 @@
 	#this-carousel-id.carousel.slide
 		.carousel-inner
 			.item.active
+				- flash.each do |name, msg|
+					= content_tag :div, msg, class: "alert"
 				= image_tag("whisper.jpg", :alt => "whisper feed", :width => 1300,:height => 600)
 				.carousel-caption
 					%p#catchphrase Share info share tips
