@@ -1,20 +1,20 @@
 .panel
 	.panel-heading
 		.row
-			.col-xs-6.col-md-6#recipe_info
+			.col-md-6#recipe_info
 				%h1= @recipe.title
 				= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
-			.col-xs-6.col-md-6#description
+			.col-md-6#description
 				= @recipe.description
 	.panel-body
-		.row
+		.row#infodirbuttons
 			.col-xs-6.col-md-6#informations
-				%a{:href => "javascript:toggleDiv('informationslist');", :style => "background-color: #ccc; padding: 5px 10px;"} Informations
+				%a{:href => "javascript:showonlyone('informationslist');", :style => "background-color: transparent; border: 1px solid #cd5e3c; padding: 5px 10px;"} Informations
 			.col-xs-6.col-md-6#directions
-				%a{:href => "javascript:toggleDiv('directionslist');", :style => "background-color: #ccc; padding: 5px 10px;"} Directions
+				%a{:href => "javascript:showonlyone('directionslist');", :style => "background-color: transparent; border: 1px solid #cd5e3c; padding: 5px 10px;"} Astuces
 
 		.row#infodirlists
-			#informationslist
+			.lists#informationslist
 				%ul
 					- @information_all.order(:cached_votes_up).reverse.each do |information|
 						%div#info
@@ -26,7 +26,7 @@
 								= link_to "#{information.title}", information.url, target: :_blank
 								- if user_signed_in?
 									- if current_user.id == information.user_id
-										= link_to "delete info", delete_info_path(information.id), method: :delete
+										= link_to "", delete_info_path(information.id), class: "glyphicon glyphicon-remove", method: :delete
 							%div#contrebutton
 								.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
 							%br
@@ -37,7 +37,7 @@
 										= link_to "#{contre.title}", contre.url, target: :_blank
 										- if user_signed_in?
 											- if current_user.id == contre.user_id
-												= link_to "delete contre", delete_contreinfo_path(contre.id), method: :delete
+												= link_to "", delete_contreinfo_path(contre.id), class: "glyphicon glyphicon-remove", method: :delete
 							.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
 								.modal-dialog.modal-sm
 									.modal-content
@@ -47,7 +47,7 @@
 											%p= c.text_field 'url', placeholder: 'add url'
 											%p= button_to "ADD"
 
-				%a.btn{"aria-controls" => "addonshowinfo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowinfo"}
+				%a.btn#add_button{"aria-controls" => "addonshowinfo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowinfo"}
 					Add an information
 				#addonshowinfo.collapse
 					.well#addonshowcollapsed
@@ -56,7 +56,7 @@
 							%p= f.text_field 'url', placeholder:'Add an url'
 							%p= button_to "Add information"
 
-			#directionslist
+			.lists#directionslist
 				%ul
 					- @direction_all.each do |direction|
 						%div#tips
@@ -71,11 +71,10 @@
 									= direction.step
 							- if user_signed_in?
 								- if current_user.id == direction.user_id
-									= link_to "delete direction", delete_direction_path(direction.id), method: :delete
+									= link_to "", delete_direction_path(direction.id), class: "glyphicon glyphicon-remove", method: :delete
 
-								
 						%br
-				%a.btn{"aria-controls" => "addonshowdirection", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowdirection"}
+				%a.btn#add_button{"aria-controls" => "addonshowdirection", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowdirection"}
 					Add an astuce
 				#addonshowdirection.collapse
 					.well#addonshowcollapsed

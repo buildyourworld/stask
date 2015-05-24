@@ -202,8 +202,25 @@ h1 {
 	text-align: center;
 } 
 
+#description {
+	text-align: center;
+	margin-top: 20px;
+}
+
 #description a {
 	font-family: Avenir;
+}
+
+#infodirbuttons {
+	margin-top: 60px;
+}
+
+div#informationslist.lists {
+	text-align: center;
+}
+
+div#directionslist.lists {
+	text-align: center;
 }
 
 #showlist {
@@ -229,6 +246,7 @@ h1 {
 
 #linkinfo a {
 	color: #3eb370;
+	font-size: 1em;
 }
 
 #contrelien {
@@ -238,6 +256,7 @@ h1 {
 
 #contrelien a {
 	color: #ee827c;
+	font-size: 1em;
 }
 
 #directions {
@@ -252,8 +271,20 @@ h1 {
 	margin-top: 10px;
 }
 
+div#tips {
+	margin-bottom: 30px
+}
+
 #tips {
 	display: -webkit-inline-box;
+}
+
+#tips a {
+	font-size: 1em;
+}
+
+#votes a {
+	font-size: 1em;
 }
 
 .btn-default {
@@ -305,6 +336,10 @@ div.button.glyphicon.glyphicon-exclamation-sign {
 	border-radius: 0px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+}
+
+#add_button {
+	margin-top: 30px;
 }
 
 /* modal */
