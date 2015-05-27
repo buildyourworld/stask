@@ -35,7 +35,7 @@ function showonlyone(thechosenone) {
                $(this).show(200);
           }
           else {
-               $(this).hide(600);
+               $(this).hide(200);
           }
      });
 }

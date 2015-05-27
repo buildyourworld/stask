@@ -15,6 +15,7 @@
  *= require social_share
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -69,15 +70,12 @@ body {
 }
 
 .panel {
-	margin-left: 50px;
-	margin-right: 50px;
-	margin-top: 50px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
 .panel-heading {
-	background-color: transparent;
+	border-bottom: 1px solid #ebf5f7;
 }
 
 .panel-footer {
@@ -151,9 +149,9 @@ a.carousel-control.right {
 }
 
 p#catchphrase {
-	line-height: 6em;
+	line-height: 1em;
 	font-size: 3em;
-	color: #0f2350;
+	color: white;
 	font-family: Futura;
 }
 
@@ -234,14 +232,22 @@ div#directionslist.lists {
 #info {
 	margin-top: 50px;
 	display: -webkit-inline-box;
+	border-top: 1px solid #ebf5f7;
 }
 
+
 #votes {
-	margin-right: 15px;
+	margin-right: 50px;
+	margin-top: 25px;
 }
 
 #contrebutton {
-	margin-left: 15px;
+	margin-left: 50px;
+	margin-top: 25px;
+}
+
+#linkinfo {
+	margin-top: 25px;
 }
 
 #linkinfo a {
@@ -251,7 +257,7 @@ div#directionslist.lists {
 
 #contrelien {
 	color: #ee827c;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 #contrelien a {
@@ -307,7 +313,6 @@ input[type="submit"] {
 	margin-top: 30px;
 }
 
-
 ul {
 	list-style: none;
 }
@@ -342,6 +347,10 @@ div.button.glyphicon.glyphicon-exclamation-sign {
 	margin-top: 30px;
 }
 
+.lists#directionslist {
+	display: none;
+}
+
 /* modal */
 
 #new_contrelien {
@@ -359,7 +368,6 @@ input#contrelien_url {
 /* footer */
 
 #footer {
-	margin-top: 50px;
 	height: 100px;
 	background-color: #ebf6f7;
 	width: 100%;
@@ -391,7 +399,7 @@ input#contrelien_url {
 
 	p#catchphrase {
 	font-size: 2em;
-	color: #0f2350;
+	color: white;
 	font-family: Futura;
 	}
 }
@@ -407,7 +415,7 @@ input#contrelien_url {
 	p#catchphrase {
 	line-height: 3em;
 	font-size: 2em;
-	color: #0f2350;
+	color: white;
 	font-family: Futura;
 	}
 }
