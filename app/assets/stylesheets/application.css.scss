@@ -41,18 +41,18 @@ div.container.row {
 }
 
 input.btn.btn-default {
-	color: #0f2350;
+	color: black;
 	font-family: Avenir;
 }
 
 .btn-default:hover {
 	background-color: transparent;
 	border-color: transparent;
-	color: #0f2350;
+	color: black;
 }
 
 h1, h4, a {
-	color: #0f2350;
+	color: black;
 	font-family: Avenir;
 }
 
@@ -65,8 +65,9 @@ body {
 }
 
 #backedit a {
-	color: #0f2350;
+	color: black;
 	margin-top: 30px;
+	margin-left: 30px;
 }
 
 .panel {
@@ -76,6 +77,11 @@ body {
 
 .panel-heading {
 	border-bottom: 1px solid #ebf5f7;
+	padding: 10px 15px;
+}
+
+.panel-body {
+	padding: 0px;
 }
 
 .panel-footer {
@@ -99,7 +105,7 @@ body {
 
 /* navbar */
 
-.navbar {
+#navhome {
 	background-color: #fff;
 	border-bottom: 1px solid #cd5e3c;
 	border-radius: none;
@@ -187,7 +193,7 @@ label.text.optional {
 }
 
 div.links a {
-	color:#0f2350;
+	color: black;
 }
 
 .nested-fields {
@@ -200,17 +206,28 @@ h1 {
 	text-align: center;
 } 
 
+#themetitle_show {
+	height: 150px;
+	padding: 0px 0px;
+	position: relative;
+}
+
+#recipe_info {
+	width: 50%;
+	height: 100%;
+	background-color: #ebf6f7;
+	border-right: 1px solid grey;
+}
+
 #description {
 	text-align: center;
-	margin-top: 20px;
+	width: 50%;
+	height: 100%;
+	background-color: #ebf6f7;
 }
 
 #description a {
 	font-family: Avenir;
-}
-
-#infodirbuttons {
-	margin-top: 60px;
 }
 
 div#informationslist.lists {
@@ -225,8 +242,43 @@ div#directionslist.lists {
 	margin-top: 40px;
 }
 
-#informations {
+#sharecol {
+	background-color: #ebf6f7;
+	border: 1px solid grey;
+}
+
+#sharecol a {
+	font-size: 1.75em;
+}
+
+#infocol {
+	background-color: #cd5e3c;
+	border: 1px solid grey;
 	text-align: center;
+}
+
+#infocol a {
+	font-size: 1.75em;
+}
+
+#astucescol {
+	background-color: #cd5e3c;
+	border: 1px solid grey;
+	text-align: center;
+}
+
+#astucescol a {
+	font-size: 1.75em;
+}
+
+#followcol {
+	background-color: #ebf6f7;
+	border: 1px solid grey;
+	text-align: center;
+}
+
+#followcol a {
+	font-size: 1.75em;
 }
 
 #info {
@@ -319,7 +371,7 @@ ul {
 
 div.button.glyphicon.glyphicon-exclamation-sign {
 	cursor: pointer;
-	color:#0f2350;
+	color: black;
 }
 
 #addonshow.collapse {
@@ -377,7 +429,7 @@ input#contrelien_url {
 #footer a {
 	cursor: pointer;
 	margin-right: 20px;
-	color: #0f2350;
+	color: black;
 	font-family: Avenir;
 	line-height: 5em;
 
