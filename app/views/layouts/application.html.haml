@@ -8,23 +8,22 @@
 
 %body
 	%nav.navbar.navbar-default.navbar-fixed-top.row#navhome
-		.container#navcontainer
-			.col-xs-4.col-sm-6.col-md-8
-				.navbar-brand=link_to "Staskstact", root_path
-			- if user_signed_in?
-				.col-xs-4.col-sm-3.col-md-2
-					%ul.nav.navbar-nav.navbar-right
-						%li= link_to "New Theme", new_recipe_path
-				.col-xs-4.col-sm-3.col-md-2
-					%ul.nav.navbar-nav.navbar-right
-						%li= link_to "Sign Out", destroy_user_session_path, method: :delete
-			- else
-				.col-xs-4.col-sm-3.col-md-2
-					%ul.nav.navbar-nav.navbar-right
-						%li= link_to "Sign up", new_user_registration_path
-				.col-xs-4.col-sm-3.col-md-2
-					%ul.nav.navbar-nav.navbar-right
-						%li= link_to "Sign in", new_user_session_path
+		.col-xs-4.col-sm-6.col-md-8
+			.navbar-brand=link_to "Staskstact", root_path
+		- if user_signed_in?
+			.col-xs-4.col-sm-3.col-md-2
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "New Theme", new_recipe_path
+			.col-xs-4.col-sm-3.col-md-2
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+		- else
+			.col-xs-4.col-sm-3.col-md-2
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign up", new_user_registration_path
+			.col-xs-4.col-sm-3.col-md-2
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign in", new_user_session_path
 
 	.container.row
 

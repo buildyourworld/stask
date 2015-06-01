@@ -5,6 +5,7 @@
 .social-share {
 	display: block;
 	text-align: center;
+	height: 100%;
 }
 
 a.ss-button.ss-facebook-share-button {

@@ -1,89 +1,90 @@
 .row#themetitle_show
-	.col-md-6#recipe_info
-		%h1= @recipe.title
-	.col-md-6#description
-		%h3= @recipe.description
-.row
 	.row
-		.col-md-3.col-xs-3#sharecol
+		.col-md-6#recipe_info
+			%p= @recipe.title
+		.col-md-6#description
+			%p= @recipe.description
+
+	.row#buttonscol
+		.col-md-3.col-xs-6#sharecol
 			= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
-		.col-md-3.col-xs-3#infocol
+		.col-md-3.col-xs-6#infocol
 			%a{:href => "javascript:showonlyone('informationslist');"} Informations
-		.col-md-3.col-xs-3#astucescol
+		.col-md-3.col-xs-6#astucescol
 			%a{:href => "javascript:showonlyone('directionslist');"} Astuces
-		.col-md-3.col-xs-3#followcol 
+		.col-md-3.col-xs-6#followcol 
 			%a Follow
 
-	.row#infodirlists
-		.lists#informationslist
-			%ul
-				- @information_all.order(:cached_votes_up).reverse.each do |information|
-					%div#info
-						%div#votes
-							= information.get_upvotes.size
-							= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
-							= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
-						%div#linkinfo
-							= link_to "#{information.title}", information.url, target: :_blank
-							- if user_signed_in?
-								- if current_user.id == information.user_id
-									= link_to "", delete_info_path(information.id), class: "glyphicon glyphicon-remove", method: :delete
-						%div#contrebutton
-							.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
-						%br
-					%div#contrelien
-						- information.contrelien.each do |contre|
-							%ul
-								%li
-									= link_to "#{contre.title}", contre.url, target: :_blank
-									- if user_signed_in?
-										- if current_user.id == contre.user_id
-											= link_to "", delete_contreinfo_path(contre.id), class: "glyphicon glyphicon-remove", method: :delete
-						.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
-							.modal-dialog.modal-sm
-								.modal-content
-									%p Adding a counterlink allow you to criticise the information provided by the belonging link
-									= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
-										%p= c.text_field 'title', placeholder: 'add title'
-										%p= c.text_field 'url', placeholder: 'add url'
-										%p= button_to "ADD"
-
-			%a.btn#add_button{"aria-controls" => "addonshowinfo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowinfo"}
-				Add an information
-			#addonshowinfo.collapse
-				.well#addonshowcollapsed
-					= form_for @info, url: add_info_recipe_path do |f|
-						%p= f.text_field 'title', placeholder:'Add a title'
-						%p= f.text_field 'url', placeholder:'Add an url'
-						%p= button_to "Add information"
-
-		.lists#directionslist
-			%ul
-				- @direction_all.each do |direction|
-					%div#tips
-						%div#votes
-							= direction.get_upvotes.size
-							= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
-							= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
-						%div#step
-							- unless direction.title.blank?
-								= link_to "#{direction.title}", direction.url, target: :_blank
-							- else
-								= direction.step
+.row#infodirlists
+	.lists#informationslist
+		%ul
+			- @information_all.order(:cached_votes_up).reverse.each do |information|
+				%div#info
+					%div#votes
+						= information.get_upvotes.size
+						= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
+						= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
+					%div#linkinfo
+						= link_to "#{information.title}", information.url, target: :_blank
 						- if user_signed_in?
-							- if current_user.id == direction.user_id
-								= link_to "", delete_direction_path(direction.id), class: "glyphicon glyphicon-remove", method: :delete
-
+							- if current_user.id == information.user_id
+								= link_to "", delete_info_path(information.id), class: "glyphicon glyphicon-remove", method: :delete
+					%div#contrebutton
+						.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}
 					%br
-			%a.btn#add_button{"aria-controls" => "addonshowdirection", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowdirection"}
-				Add an astuce
-			#addonshowdirection.collapse
-				.well#addonshowcollapsed
-					= form_for @direction, url: add_direction_recipe_path do |f|
-						%p= f.text_field 'title', placeholder:'Add title'
-						%p= f.text_field 'url', placeholder:'Add url'
-						%p= f.text_field 'step', placeholder:'Add text'
-						%p= button_to "Add astuces"
+				%div#contrelien
+					- information.contrelien.each do |contre|
+						%ul
+							%li
+								= link_to "#{contre.title}", contre.url, target: :_blank
+								- if user_signed_in?
+									- if current_user.id == contre.user_id
+										= link_to "", delete_contreinfo_path(contre.id), class: "glyphicon glyphicon-remove", method: :delete
+					.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
+						.modal-dialog.modal-sm
+							.modal-content
+								%p Adding a counterlink allow you to criticise the information provided by the belonging link
+								= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
+									%p= c.text_field 'title', placeholder: 'add title'
+									%p= c.text_field 'url', placeholder: 'add url'
+									%p= button_to "ADD"
+
+		%a.btn#add_button{"aria-controls" => "addonshowinfo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowinfo"}
+			Add an information
+		#addonshowinfo.collapse
+			.well#addonshowcollapsed
+				= form_for @info, url: add_info_recipe_path do |f|
+					%p= f.text_field 'title', placeholder:'Add a title'
+					%p= f.text_field 'url', placeholder:'Add an url'
+					%p= button_to "Add information"
+
+	.lists#directionslist
+		%ul
+			- @direction_all.each do |direction|
+				%div#tips
+					%div#votes
+						= direction.get_upvotes.size
+						= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
+						= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
+					%div#step
+						- unless direction.title.blank?
+							= link_to "#{direction.title}", direction.url, target: :_blank
+						- else
+							= direction.step
+					- if user_signed_in?
+						- if current_user.id == direction.user_id
+							= link_to "", delete_direction_path(direction.id), class: "glyphicon glyphicon-remove", method: :delete
+
+				%br
+		%a.btn#add_button{"aria-controls" => "addonshowdirection", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowdirection"}
+			Add an astuce
+		#addonshowdirection.collapse
+			.well#addonshowcollapsed
+				= form_for @direction, url: add_direction_recipe_path do |f|
+					%p= f.text_field 'title', placeholder:'Add title'
+					%p= f.text_field 'url', placeholder:'Add url'
+					%p= f.text_field 'step', placeholder:'Add text'
+					%p= button_to "Add astuces"
 #backedit
 	= link_to "Back", root_path, class: "btn btn-default"
 	- if user_signed_in?
