@@ -5,9 +5,11 @@
 .social-share {
 	display: block;
 	text-align: center;
-	height: 100%;
+	height: 90px;
+	margin-top: 30px;
 }
 
+/*
 a.ss-button.ss-facebook-share-button {
 	background: transparent;
 }
@@ -58,4 +60,4 @@ a.ss-button.ss-reddit-share-button {
 
 a.ss-more-button {
 	display: none;
-}
+}*/

@@ -117,7 +117,7 @@ body {
 
 #navhome {
 	background-color: #fff;
-	border-bottom: 1px solid #FF7A01;
+	border-bottom: 1px solid #f0908d;
 	border-radius: none;
 }
 
@@ -126,7 +126,7 @@ body {
 }
 
 .navbar-brand a {
-	color: #FF7A01;
+	color: #f0908d;
 	text-decoration: none;
 	font-family: Futura;
 }
@@ -220,13 +220,13 @@ h1 {
 	height: 100%;
 	padding: 0px 0px;
 	position: relative;
-	background-color: #ebf6f7;
+	background-color: #e9dfe5;
 }
 
 #recipe_info {
-	width: 50%;
+	width: 100%;
 	height: 100%;
-	background-color: #ebf6f7;
+	background-color: transparent;
 	text-align: center;
 	margin-top: 30px;
 }
@@ -236,11 +236,16 @@ h1 {
 	font-family: Futura;
 }
 
+div#description {
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
 #description {
 	text-align: center;
-	width: 50%;
+	width: 100%;
 	height: 100%;
-	background-color: #ebf6f7;
+	background-color: transparent;
 	margin-top: 30px;
 }
 
@@ -250,6 +255,8 @@ h1 {
 }
 
 #buttonscol {
+		background-color: white;
+		height: 40px;
 		margin-top: 50px;
 }
 
@@ -266,7 +273,7 @@ div#directionslist.lists {
 }
 
 #sharecol {
-	background-color: #ebf6f7;
+	background-color: transparent;
 }
 
 #sharecol a {
@@ -274,25 +281,29 @@ div#directionslist.lists {
 }
 
 #infocol {
-	background-color: #FF7A01;
+	background-color: transparent;
 	text-align: center;
 }
 
 #infocol a {
 	font-size: 1.75em;
+	border: 2px solid #e9dfe5;
+	padding: 15px;
 }
 
 #astucescol {
-	background-color: #FF7A01;
+	background-color: transparent;
 	text-align: center;
 }
 
 #astucescol a {
 	font-size: 1.75em;
+	border: 2px solid #e9dfe5;
+	padding: 15px;
 }
 
 #followcol {
-	background-color: #ebf6f7;
+	background-color: transparent;
 	text-align: center;
 }
 
@@ -303,7 +314,7 @@ div#directionslist.lists {
 #info {
 	margin-top: 50px;
 	display: -webkit-inline-box;
-	border-top: 1px solid #ebf5f7;
+	border-top: 1px solid transparent;
 }
 
 
@@ -476,7 +487,7 @@ input#contrelien_url {
 	}
 
 	#themetitle_show {
-		background-color: #ebf6f7;
+		background-color: #e9dfe5;
 	}
 
 	#recipe_info {
@@ -486,6 +497,11 @@ input#contrelien_url {
 	margin-bottom: 50px;
 	}
 
+	div#description {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 	#description {
 	text-align: center;
 	width: 100%;
@@ -494,7 +510,8 @@ input#contrelien_url {
 	}
 
 	#buttonscol {
-		margin-top: 50px;
+		background-color: white;
+		height: 40px;
 	}
 
 	.row {
@@ -519,25 +536,31 @@ input#contrelien_url {
 	}
 
 	#themetitle_show {
-		background-color: #ebf6f7;
+		background-color: #e9dfe5;
 	}
 
 	#recipe_info {
 	width: 100%;
 	height: 100%;
-	background-color: #ebf6f7;
+	background-color: transparent;
 	margin-bottom: 30px;
 	}
+
+	div#description {
+	padding-left: 30px;
+	padding-right: 30px;
+}
 
 	#description {
 	text-align: center;
 	width: 100%;
 	height: 100%;
-	background-color: #ebf6f7;
+	background-color: transparent;
 	}
 
 	#buttonscol {
-		margin-top: 50px;
+		background-color: white;
+		height: 40px;
 	}
 
 	.row {
@@ -562,14 +585,13 @@ input#contrelien_url {
 	}
 
 	#themetitle_show {
-		background-color: #ebf6f7;
-		margin-bottom: 30px;
+		background-color: #e9dfe5;
 	}
 
 	#recipe_info {
 	width: 100%;
 	height: 100%;
-	background-color: #ebf6f7;
+	background-color: transparent;
 	margin-bottom: 30px;
 	}
 
@@ -577,11 +599,12 @@ input#contrelien_url {
 	text-align: center;
 	width: 100%;
 	height: 100%;
-	background-color: #ebf6f7;
+	background-color: transparent;
 	}
 
 	#buttonscol {
-		margin-top: 50px;
+		background-color: white;
+		height: 40px;
 	}
 
 	.row {
