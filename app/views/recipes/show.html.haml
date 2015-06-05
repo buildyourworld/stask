@@ -23,7 +23,7 @@
 						= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
 						= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
 					%div#linkinfo
-						= link_to "#{information.title}", "http://#{information.url}", target: :_blank
+						= link_to "#{information.title}", "#{information.url}", target: :_blank
 						- if user_signed_in?
 							- if current_user.id == information.user_id
 								= link_to "", delete_info_path(information.id), class: "glyphicon glyphicon-remove", method: :delete
@@ -34,7 +34,7 @@
 					- information.contrelien.each do |contre|
 						%ul
 							%li
-								= link_to "#{contre.title}", "http://#{contre.url}", target: :_blank
+								= link_to "#{contre.title}", "#{contre.url}", target: :_blank
 								- if user_signed_in?
 									- if current_user.id == contre.user_id
 										= link_to "", delete_contreinfo_path(contre.id), class: "glyphicon glyphicon-remove", method: :delete
@@ -66,7 +66,7 @@
 						= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
 					%div#step
 						- unless direction.title.blank?
-							= link_to "#{direction.title}", "http://#{direction.url}", target: :_blank
+							= link_to "#{direction.title}", "#{direction.url}", target: :_blank
 						- else
 							= direction.step
 					- if user_signed_in?
