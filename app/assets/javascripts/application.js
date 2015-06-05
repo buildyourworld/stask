@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cocoon
 //= require 'social_share'
 //= require turbolinks
 //= require bootstrap-sprockets

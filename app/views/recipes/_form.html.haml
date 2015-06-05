@@ -11,14 +11,15 @@
 		= f.input :title, input_html: { class: 'form-control' }
 		= f.input :description, input_html: { class: 'form-control' }
 		= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}
-		= f.simple_fields_for :informations do |information|
-			= render 'information_fields', :f => information
-		.links
-			= link_to_add_association 'Add Information', f, :informations, class: "btn btn-default add-button"
-
-		= f.simple_fields_for :directions do |direction|
-			= render 'direction_fields', :f => direction
-		.links
-			= link_to_add_association 'Add Astuces', f, :directions, class: "btn btn-default add-button"
+		%h3 direction
+		= f.simple_fields_for @direction do |d|
+			= d.input :title, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+			= d.input :url, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+			%p or
+			= d.input :step, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+		%h3 infos
+		= f.simple_fields_for @info do |i|
+			= i.input :title, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+			= i.input :url, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
 	.panel-footer
 		= f.button :submit, value:"Create Theme", class: "btn btn-default"

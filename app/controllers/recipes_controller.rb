@@ -20,45 +20,30 @@ class RecipesController < ApplicationController
 
 	def new
 		@recipe = current_user.recipes.new
+		@info = @recipe.informations.new
+		@direction = @recipe.directions.new
 	end
 
 	def create
 		@recipe = current_user.recipes.new(recipe_params)
-		@recipe.save
+		@info = @recipe.informations.new(title: params["recipe"]["information"]["title"], url: params["recipe"]["information"]["url"])
+		@direction = @recipe.directions.new(title: params["recipe"]["direction"]["title"], url: params["recipe"]["direction"]["url"], step: params["recipe"]["direction"]["step"])
 
-		info_arr = []
-		if not params[:recipe]["informations_attributes"].nil?
-			z = params[:recipe]["informations_attributes"].keys.count
-			x = 0
-			while x < z
-				key = params[:recipe]["informations_attributes"].keys[x]
-				value = params[:recipe]["informations_attributes"][key]
-				info_arr.push(value)
-				#puts "infooooo"
-				#puts info_arr[0]
-				#puts info_arr[x]["title"]
-				@recipe.informations.new(title: info_arr[x]["title"]).save
-			  	x = x +1
-			end
-		end
-
-		direct_arr = []
-		if not params[:recipe]["directions_attributes"].nil?
-			z_z = params[:recipe]["directions_attributes"].keys.count
-			x_x = 0
-			while x_x < z_z
-				key_key = params[:recipe]["directions_attributes"].keys[x_x]
-				value_v = params[:recipe]["directions_attributes"][key_key]
-				direct_arr.push(value_v)
-				# puts "directionsssss"
-				# puts direct_arr.first["title"]
-				@recipe.directions.new(title: direct_arr[x_x]["title"]).save
-			  	x_x = x_x +1
-			end
-		end		
-
-		redirect_to recipe_path(@recipe.id)
-
+	    respond_to do |format|
+	      if @recipe.save
+	      	if not @info == nil
+	      		@info.save
+	      	end
+	      	if not @direction == nil
+	      		@direction.save
+	      	end
+	        format.html { redirect_to @recipe, notice: 'Image was successfully created.' }
+	        format.json { render :show, status: :created, location: @recipe }
+	      else
+	        format.html { render :new }
+	        format.json { render json: @recipe.errors, status: :unprocessable_entity }
+	      end
+	    end
 	end
 
 	def edit
@@ -157,7 +142,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:category_id, :title, :description, informations_attributes: [:id, :title, :url, :user_id, :_destroy], directions_attributes: [:id, :title, :user_id, :url, :step, :_destroy])
+		params.require(:recipe).permit(:category_id, :title, :description)
 	end
 
 	def find_recipe
