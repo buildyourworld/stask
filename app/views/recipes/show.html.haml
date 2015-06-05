@@ -1,19 +1,17 @@
 .row#themetitle_show
 	.row
-		.col-md-6#recipe_info
+		#recipe_info
 			%p= @recipe.title
-		.col-md-6#description
+		#description
 			%p= @recipe.description
-
-	.row#buttonscol
-		.col-md-3.col-xs-6#sharecol
-			= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
-		.col-md-3.col-xs-6#infocol
-			%a{:href => "javascript:showonlyone('informationslist');"} Informations
-		.col-md-3.col-xs-6#astucescol
-			%a{:href => "javascript:showonlyone('directionslist');"} Astuces
-		.col-md-3.col-xs-6#followcol 
-			%a Follow
+	.row
+		= social_share(@recipe.title, recipe_path(@recipe), services: [:facebook, :twitter, :google_plus, :reddit])
+	
+.row#buttonscol
+	.col-md-6.col-xs-6#infocol
+		%a{:href => "javascript:showonlyone('informationslist');"} Informations
+	.col-md-6.col-xs-6#astucescol
+		%a{:href => "javascript:showonlyone('directionslist');"} Astuces
 
 .row#infodirlists
 	.lists#informationslist

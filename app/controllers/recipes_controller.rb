@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 		@info = @recipe.informations.build
 		@direction = @recipe.directions.build
 		@contrelien = Contrelien.new
-		@information_all = @recipe.informations.where.not(id: nil)
+		@information_all = @recipe.informations
 		@direction_all = @recipe.directions.where.not(id: nil)
 	end
 
@@ -142,7 +142,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:category_id, :title, :description)
+		params.require(:recipe).permit(:category_id, :title, :description) #informations_attributes: [:id, :title, :url, :user_id, :_destroy], directions_attributes: [:id, :title, :user_id, :url, :step, :_destroy]
 	end
 
 	def find_recipe
