@@ -9,6 +9,10 @@
 	margin-top: 30px;
 }
 
+a.ss-more-button {
+	display: none;
+}
+
 /*
 a.ss-button.ss-facebook-share-button {
 	background: transparent;
@@ -57,7 +61,4 @@ a.ss-button.ss-reddit-share-button {
 .ss-icon-reddit {
 	color: #0f2350;
 }
-
-a.ss-more-button {
-	display: none;
-}*/
+*/

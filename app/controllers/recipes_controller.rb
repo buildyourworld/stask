@@ -26,8 +26,8 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = current_user.recipes.new(recipe_params)
-		@info = @recipe.informations.new(title: params["recipe"]["information"]["title"], url: params["recipe"]["information"]["url"])
-		@direction = @recipe.directions.new(title: params["recipe"]["direction"]["title"], url: params["recipe"]["direction"]["url"], step: params["recipe"]["direction"]["step"])
+		@info = @recipe.informations.new(title: params["recipe"]["information"]["title"], url: params["recipe"]["information"]["url"], user_id: current_user.id)
+		@direction = @recipe.directions.new(title: params["recipe"]["direction"]["title"], url: params["recipe"]["direction"]["url"], step: params["recipe"]["direction"]["step"], user_id: current_user.id)
 
 	    respond_to do |format|
 	      if @recipe.save

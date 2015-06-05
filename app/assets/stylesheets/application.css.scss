@@ -132,7 +132,7 @@ body {
 }
 
 .navbar-default .navbar-nav li a {
-	color: #0f2350;
+	color: black;
 	font-family: Avenir;
 }
 
@@ -338,7 +338,7 @@ div#directionslist.lists {
 }
 
 #contrelien {
-	color: #ee827c;
+	color: black;
 	margin-top: 15px;
 }
 
@@ -382,7 +382,7 @@ div#tips {
 }
 
 input[type="submit"] {
-	color: #0f2350;
+	color: black;
 	border: none;
 	background-color: transparent;
 }
@@ -435,8 +435,14 @@ div.button.glyphicon.glyphicon-exclamation-sign {
 
 /* modal */
 
+
+div.modal-content {
+	padding: 25px 25px
+}
+
 #new_contrelien {
 	vertical-align: middle;
+	margin-top: 25px;
 }
 
 input#contrelien_url {
@@ -451,15 +457,16 @@ input#contrelien_url {
 
 #footer {
 	height: 100px;
-	background-color: #ebf6f7;
+	background-color: #e9e4d4;
 	width: 100%;
 	text-align: center;
 	margin-top: 30px;
 }
 
 #footer a {
+	font-size: 1.5em;
 	cursor: pointer;
-	margin-right: 20px;
+	margin-right: 50px;
 	color: black;
 	font-family: Avenir;
 	line-height: 5em;
