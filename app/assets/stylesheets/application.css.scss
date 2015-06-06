@@ -125,15 +125,32 @@ body {
 	width: 90%;
 }
 
+div.navbar-brand {
+	margin-left: 30px;
+}
+
 .navbar-brand a {
 	color: #f0908d;
 	text-decoration: none;
 	font-family: Futura;
+	font-weight: 500;
+}
+
+ul.nav.navbar-nav {
+	text-align: center;
+	float: none;
+	display: -webkit-inline-box;
+}
+
+.navbar-default .navbar-nav li {
+	margin-left: 30px;
+	float: none;
 }
 
 .navbar-default .navbar-nav li a {
 	color: black;
 	font-family: Avenir;
+	font-weight: 500;
 }
 
 
@@ -479,6 +496,11 @@ input#contrelien_url {
 
 
 @media only screen and (max-width : 480px){
+
+	div.navbar-brand {
+		margin-left: 0px;
+	}
+	
 	#categorieslist a {
 		font-size: .5em;
 	}
@@ -531,6 +553,11 @@ input#contrelien_url {
 /* media queries small */
 
 @media only screen and (max-width : 768px){
+	
+	div.navbar-brand {
+		margin-left: 0px;
+	}
+
 	#categorieslist a {
 		font-size: .75em;
 	}
