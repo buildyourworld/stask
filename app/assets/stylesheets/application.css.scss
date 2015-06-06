@@ -305,6 +305,7 @@ div#directionslist.lists {
 #infocol a {
 	font-size: 1.75em;
 	border: 2px solid #e9dfe5;
+	border-radius: 4px;
 	padding: 15px;
 }
 
@@ -316,16 +317,12 @@ div#directionslist.lists {
 #astucescol a {
 	font-size: 1.75em;
 	border: 2px solid #e9dfe5;
+	border-radius: 4px;
 	padding: 15px;
 }
 
-#followcol {
-	background-color: transparent;
-	text-align: center;
-}
-
-#followcol a {
-	font-size: 1.75em;
+a#add_button.btn {
+	border: 2px solid #e9dfe5;
 }
 
 #info {
@@ -350,8 +347,8 @@ div#directionslist.lists {
 }
 
 #linkinfo a {
-	color: #3eb370;
-	font-size: 1em;
+	color: black;
+	font-size: 1.25em;
 }
 
 #contrelien {
@@ -382,10 +379,12 @@ div#tips {
 
 #tips {
 	display: -webkit-inline-box;
+	font-family: Avenir;
 }
 
-#tips a {
-	font-size: 1em;
+div#step {
+	font-size: 1.25em;
+	font-family: Avenir;
 }
 
 #votes a {
