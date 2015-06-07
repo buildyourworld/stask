@@ -20,10 +20,17 @@
 		%a.carousel-control.right{"data-slide" => "next", :href => "#this-carousel-id"} ›
 
 .row#indexlists
-	%div.col-xs-5.col-sm-6#categorieslist
-		- Category.all.each do |category|
-			%h2= link_to category.name, recipes_path(category: category.name)
+	%div.aside-container#categorieslist
+		%div.aside-content
+			%div.aside-header
+				%h1#homecategtheme Categories
+			%div#homecategtheme
+				- Category.all.each do |category|
+					%h2= link_to category.name, recipes_path(category: category.name)
 
-	%div.col-xs-7.col-sm-6#recipeslist
-		- @recipes.each do |recipe|
-			%h2= link_to recipe.title, recipe
+	%div.main-container#recipeslist
+		%h1#homecategtheme Themes
+
+		%div
+			- @recipes.each do |recipe|
+				%h2= link_to recipe.title, recipe
