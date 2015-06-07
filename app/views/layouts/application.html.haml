@@ -25,6 +25,22 @@
 
 		= yield
 
-%footer#footer	
-	%a Feedback
-	%a Support
+%footer
+  .wide_wrapper
+    #logo
+      .pad-left-footer
+        %i.fa.fa-copyright
+      .pad-left-footer StaskStact
+      .pad-left-footer= Time.now.year
+    %nav.navigation
+      %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "FAQ"}
+        %i.fa.fa-question.fa-2x
+      %a{"data-placement" => "top", "data-toggle" => "tooltip", :onclick => "myFace()", :target => "_blank", :title => "Share infos !"}
+        %i.fa.fa-facebook-square.fa-2x.click
+      %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "https://monolok.github.io/online", :target => "_blank", :title => "Meet the developer"}
+        %i.fa.fa-github.fa-2x
+      %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "Donate BTC !"}
+        %i.fa.fa-btc.fa-2x
+      %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "mailto:jeanhuguesbc@hotmail.com", :title => "Say hi !"}
+        %i.fa.fa-paper-plane.fa-2x
+
