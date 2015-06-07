@@ -14,7 +14,7 @@
  *= require_self
  *= require social_share
  */
-
+@import "font-awesome";
 
 .checkbox input[type="checkbox"] {
 	margin-left: 0px;
@@ -473,22 +473,44 @@ input#contrelien_url {
 
 /* footer */
 
-#footer {
-	height: 100px;
-	background-color: #e9e4d4;
-	width: 100%;
-	text-align: center;
-	margin-top: 30px;
+footer {
+    clear: both;
+    width: 100%;
+    padding: 1rem 0px;
+    border-top: 1px solid #E9E9E9;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    z-index: 1030;
 }
-
-#footer a {
-	font-size: 1.5em;
-	cursor: pointer;
-	margin-right: 50px;
-	color: black;
-	font-family: Avenir;
-	line-height: 5em;
-
+.wide_wrapper {
+    width: 95%;
+    margin: 0px auto;
+    max-width: 1440px;
+}
+footer #logo {
+    width: 40px;
+    display: inline-flex;
+    float: left;
+}
+.navigation {
+    float: right;
+    padding: 0rem 2.5% 0px 0px;
+}
+footer .navigation {
+    float: right;
+    font-family: "brandon-grotesque",sans-serif;
+    font-weight: 700;
+    color: #4C5650;
+}
+footer .navigation a {
+    color: #4C5650;
+    margin-left: 1.5rem;
+    line-height: 1;
+    display: inline-block;
+}
+.pad-left-footer {
+	padding-left: 18%;
 }
 
 
