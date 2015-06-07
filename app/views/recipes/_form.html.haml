@@ -11,15 +11,18 @@
 		= f.input :title, input_html: { class: 'form-control' }
 		= f.input :description, input_html: { class: 'form-control' }
 		= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}
-		%h3 direction
+		%h2{:style => "margin-top: 60px"} Informations and tips 
+		%h5 Add at least one info or one astuce to your theme, you will be able to add more after the them would be created
+		%h3{:style => "margin-top: 60px"} Informations
+		= f.simple_fields_for @info do |i|
+			= i.input :title, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+			= i.input :url, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+		%h3 Tips
 		= f.simple_fields_for @direction do |d|
 			= d.input :title, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
 			= d.input :url, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
 			%p or
 			= d.input :step, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
-		%h3 infos
-		= f.simple_fields_for @info do |i|
-			= i.input :title, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
-			= i.input :url, input_html: { class: "form-input form-control", :style => "margin-bottom:10px"}
+		
 	.panel-footer
 		= f.button :submit, value:"Create Theme", class: "btn btn-default"

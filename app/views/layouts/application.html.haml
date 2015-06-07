@@ -8,30 +8,23 @@
 
 %body
 	%nav.navbar.navbar-default.navbar-fixed-top.row#navhome
-		.col-xs-4.col-sm-6.col-md-8
+		.col-xs-6.col-sm-8.col-md-9
 			.navbar-brand=link_to "Staskstact", root_path
 		- if user_signed_in?
-			.col-xs-4.col-sm-3.col-md-2
-				%ul.nav.navbar-nav.navbar-right
+			.col-xs-6.col-sm-4.col-md-3
+				%ul.nav.navbar-nav
 					%li= link_to "New Theme", new_recipe_path
-			.col-xs-4.col-sm-3.col-md-2
-				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
 		- else
-			.col-xs-4.col-sm-3.col-md-2
-				%ul.nav.navbar-nav.navbar-right
+			.col-xs-6.col-sm-4.col-md-3
+				%ul.nav.navbar-nav
 					%li= link_to "Sign up", new_user_registration_path
-			.col-xs-4.col-sm-3.col-md-2
-				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Sign in", new_user_session_path
 
 	.container.row
 
 		= yield
 
-%footer#footer
-	%a AeM
-	%a facebook
-	%a twitter
-	%a feedback
-	%a support
+%footer#footer	
+	%a Feedback
+	%a Support

@@ -38,3 +38,7 @@ function showonlyone(thechosenone) {
           }
      });
 }
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
