@@ -20,17 +20,18 @@
 		%a.carousel-control.right{"data-slide" => "next", :href => "#this-carousel-id"} ›
 
 .row#indexlists
-	%div.aside-container#categorieslist
+	%div.aside-container#aside
 		%div.aside-content
 			%div.aside-header
 				%h1#homecategtheme Categories
-			%div#homecategtheme
+			%div#categorieslist
 				- Category.all.each do |category|
 					%h2= link_to category.name, recipes_path(category: category.name)
+	
+	%a.btn.btn-icon#button{:href => "javascript:toggleDiv('myContent');", class: "glyphicon glyphicon-filter"}
 
 	%div.main-container#recipeslist
 		%h1#homecategtheme Themes
-
-		%div
+		%div#recipeslist
 			- @recipes.each do |recipe|
 				%h2= link_to recipe.title, recipe

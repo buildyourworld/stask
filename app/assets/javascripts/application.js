@@ -28,6 +28,10 @@
   });
 </script>*/
 
+function toggleDiv(aside) {
+   $("#aside").toggle();
+}
+
 function showonlyone(thechosenone) {
      $('.lists').each(function(index) {
           if ($(this).attr("id") == thechosenone) {

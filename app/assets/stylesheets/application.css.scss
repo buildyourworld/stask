@@ -20,11 +20,19 @@
 
 /* categories and themes on home page */
 
+a#button.btn.btn-icon.glyphicon.glyphicon-filter {
+	font-size: 2em;
+	width: 50px;
+	height: 50px;
+	background: #ecf6fe;
+	border-radius: 0px;
+}
+
+
 .aside-container {
 	background: #ecf6fe;
 	bottom: 0;
 	box-shadow: 0 0 0 0 transparent;
-	display: block;
 	left: 0;
 	max-width: 100%;
 	top: 0;
@@ -35,19 +43,20 @@
 
 div#indexlists.row {
 	display: -webkit-flex;
+	margin-left: 10px;
 }
 
 
 
 .main-container {
-	width: 70%;
+	width: 100%;
 }
 
 
-#homecategtheme {
+/*#homecategtheme {
 	margin-top: 30px;
 	margin-bottom: 60px;
-}
+}*/
 
 #categorieslist {
 	text-align: center;
@@ -582,6 +591,10 @@ footer .navigation a {
 	div.navbar-brand {
 		margin-left: 0px;
 	}
+
+	a#button.btn.btn-icon.glyphicon.glyphicon-filter {
+	font-size: 1em;
+	}
 	
 	#categorieslist a {
 		font-size: .5em;
@@ -640,8 +653,16 @@ footer .navigation a {
 		margin-left: 0px;
 	}
 
+	a#button.btn.btn-icon.glyphicon.glyphicon-filter {
+	font-size: 1.5em;
+	}
+
+	#homecategtheme {
+		font-size: 1em;
+	}
+
 	#categorieslist a {
-		font-size: .75em;
+		font-size: 0.75em;
 	}
 
 	p#catchphrase {
@@ -689,6 +710,11 @@ footer .navigation a {
 
 
 @media only screen and (max-width : 1021px){
+
+	div#indexlists.row {
+		margin-left: 0px;
+	}
+
 	#categorieslist a {
 		font-size: .75em;
 	}
