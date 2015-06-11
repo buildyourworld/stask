@@ -17,37 +17,38 @@
 	.lists#informationslist
 		%ul
 			- @information_all.order(:cached_votes_up).reverse.each do |information|
-				%div#info
-					%div#votes
-						= information.get_upvotes.size
-						= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
-						= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
-					%div#linkinfo
-						= link_to "#{information.title}", "#{information.url}", target: :_blank
-						- if user_signed_in?
-							- if current_user.id == information.user_id
-								= link_to "", delete_info_path(information.id), class: "glyphicon glyphicon-remove", method: :delete
-					%div#contrebutton{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Click here to add a link to criticize the information", :type => "button"} 
-						.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}	
+				%div#infocontreinfo
+					%div#info
+						%div#votes
+							= information.get_upvotes.size
+							= link_to "", upvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-up"
+							= link_to "", downvote_info_path(information.id), class: "glyphicon glyphicon-thumbs-down"
+						%div#linkinfo
+							= link_to "#{information.title}", "#{information.url}", target: :_blank
+							- if user_signed_in?
+								- if current_user.id == information.user_id
+									= link_to "", delete_info_path(information.id), class: "glyphicon glyphicon-remove", method: :delete
+						%div#contrebutton{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Click here to add a link to criticize the information", :type => "button"} 
+							.button.glyphicon.glyphicon-exclamation-sign{"data-target" => ".#{information.id}", "data-toggle" => "modal", :type => "button"}	
 
 
-					%br
-				%div#contrelien
-					- information.contrelien.each do |contre|
-						%ul
-							%li
-								= link_to "#{contre.title}", "#{contre.url}", target: :_blank
-								- if user_signed_in?
-									- if current_user.id == contre.user_id
-										= link_to "", delete_contreinfo_path(contre.id), class: "glyphicon glyphicon-remove", method: :delete
-					.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
-						.modal-dialog.modal-sm
-							.modal-content
-								%p Adding a counterlink allow you to criticise the information provided by the belonging link
-								= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
-									%p= c.text_field 'title', placeholder: 'add title'
-									%p= c.text_field 'url', placeholder: 'add url'
-									%p= button_to "ADD"
+						%br
+					%div#contrelien
+						- information.contrelien.each do |contre|
+							%ul
+								%li
+									= link_to "#{contre.title}", "#{contre.url}", target: :_blank
+									- if user_signed_in?
+										- if current_user.id == contre.user_id
+											= link_to "", delete_contreinfo_path(contre.id), class: "glyphicon glyphicon-remove", method: :delete
+						.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :class => "#{information.id}", :role => "dialog", :tabindex => "-1"}
+							.modal-dialog.modal-sm
+								.modal-content
+									%p Adding a counterlink allow you to criticise the information provided by the belonging link
+									= form_for @contrelien, url: add_contreinfo_path(information.id) do |c|
+										%p= c.text_field 'title', placeholder: 'add title'
+										%p= c.text_field 'url', placeholder: 'add url'
+										%p= button_to "ADD"
 
 		%a.btn#add_button{"aria-controls" => "addonshowinfo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#addonshowinfo"}
 			Add an information

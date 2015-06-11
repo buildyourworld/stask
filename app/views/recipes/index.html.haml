@@ -2,7 +2,7 @@
 	#this-carousel-id.carousel.slide
 		.carousel-inner
 			.item.active
-				= image_tag("whisper.jpg", :alt => "whisper feed", :width => 1300,:height => 600)
+				= image_tag("whisper.jpg", :alt => "whisper feed", :width => 1300,:height => 650)
 				- flash.each do |name, msg|
 					= content_tag :div, msg, class: "alert"
 				.carousel-caption
@@ -34,4 +34,6 @@
 		%h1#homecategtheme Themes
 		%div#recipeslist
 			- @recipes.each do |recipe|
-				%h2= link_to recipe.title, recipe
+				%div#indexthemes
+					%h2= link_to recipe.title, recipe
+					%h4#indexthemedesc= link_to recipe.description, recipe

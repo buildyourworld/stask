@@ -17,16 +17,9 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-/*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.carousel').carousel({
-      interval: 2000
-    });
-  });
-</script>*/
+$(document).ready(function(){
+    $('#infocol_a').css({"background-color": "#e9dfe5"});
+});
 
 function toggleDiv(aside) {
    $("#aside").toggle();
