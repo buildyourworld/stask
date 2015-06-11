@@ -9,9 +9,9 @@
 	
 .row#buttonscol
 	.col-md-6.col-xs-6#infocol
-		%a{:href => "javascript:showonlyone('informationslist');"} Informations
+		%a.ls_title#infocol_a{:href => "javascript:showonlyone('informationslist', 'infocol_a');"} Informations
 	.col-md-6.col-xs-6#astucescol
-		%a{:href => "javascript:showonlyone('directionslist');"} Astuces
+		%a.ls_title#astucescol_a{:href => "javascript:showonlyone('directionslist', 'astucescol_a');"} Astuces
 
 .row#infodirlists
 	.lists#informationslist

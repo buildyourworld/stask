@@ -53,10 +53,10 @@ div#indexlists.row {
 }
 
 
-/*#homecategtheme {
+#homecategtheme {
 	margin-top: 30px;
 	margin-bottom: 60px;
-}*/
+}
 
 #categorieslist {
 	text-align: center;
@@ -176,7 +176,10 @@ div.alert {
 
 /* index */
 
-
+#downbar {
+	width: 100%;
+	height:50px;
+}
 
 /* navbar */
 
@@ -363,7 +366,6 @@ div#directionslist.lists {
 }
 
 #infocol {
-	background-color: transparent;
 	text-align: center;
 }
 
@@ -375,7 +377,6 @@ div#directionslist.lists {
 }
 
 #astucescol {
-	background-color: transparent;
 	text-align: center;
 }
 
@@ -385,6 +386,10 @@ div#directionslist.lists {
 	border-radius: 4px;
 	padding: 15px;
 }
+
+/*#astucescol a:active {
+	background-color: #e9dfe5;
+} */
 
 a#add_button.btn {
 	border: 2px solid #e9dfe5;

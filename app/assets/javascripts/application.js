@@ -32,7 +32,7 @@ function toggleDiv(aside) {
    $("#aside").toggle();
 }
 
-function showonlyone(thechosenone) {
+function showonlyone(thechosenone, thetitleone) {
      $('.lists').each(function(index) {
           if ($(this).attr("id") == thechosenone) {
                $(this).show(200);
@@ -41,6 +41,14 @@ function showonlyone(thechosenone) {
                $(this).hide(200);
           }
      });
+     $('.ls_title').each(function(index) {
+          if ($(this).attr("id") == thetitleone) {
+               $(this).css({"background-color": "#e9dfe5"});
+          }
+          else if ($(this).attr("id") != thetitleone) {
+               $(this).css({"background-color": ""});
+          }; 
+     });     
 }
 
 $(function () {
