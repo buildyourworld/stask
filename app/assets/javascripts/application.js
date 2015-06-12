@@ -21,9 +21,9 @@ $(document).ready(function(){
     $('#infocol_a').css({"background-color": "#e9dfe5"});
 });
 
-function toggleDiv(aside) {
-   $("#aside").toggle();
-}
+// function toggleDiv(aside) {
+//    $("#aside").toggle();
+// }
 
 function showonlyone(thechosenone, thetitleone) {
      $('.lists').each(function(index) {

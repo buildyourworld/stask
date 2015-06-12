@@ -19,16 +19,32 @@
 		%a.carousel-control.left{"data-slide" => "prev", :href => "#this-carousel-id"} ‹
 		%a.carousel-control.right{"data-slide" => "next", :href => "#this-carousel-id"} ›
 .row#downbar
+
 .row#indexlists
-	%div.aside-container#aside
-		%div.aside-content
-			%div.aside-header
-				%h1#homecategtheme Categories
-			%div#categorieslist
-				- Category.all.each do |category|
-					%h2= link_to category.name, recipes_path(category: category.name)
+	%button.btn.btn-default.btn-lg#butcat{"data-target" => "#modalcategories", "data-toggle" => "modal", :type => "button", class: "glyphicon glyphicon-filter"}
+	#modalcategories.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+		.modal-dialog#modalcontent
+			.modal-content
+				.modal-header
+					%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+						%span{"aria-hidden" => "true"} ×
+					%h4#myModalLabel.modal-title Categories
+				.modal-body
+					%div#categorieslist
+						- Category.all.each do |category|
+							%h2= link_to category.name, recipes_path(category: category.name)
+
+
+
+	/ %div.aside-container#aside
+	/ 	%div.aside-content
+	/ 		%div.aside-header
+	/ 			%h1#homecategtheme Categories
+	/ 		%div#categorieslist
+	/ 			- Category.all.each do |category|
+	/ 				%h2= link_to category.name, recipes_path(category: category.name)
 	
-	%a.btn.btn-icon#button{:href => "javascript:toggleDiv('myContent');", class: "glyphicon glyphicon-filter"}
+	/ %a.btn.btn-icon#button{:href => "javascript:toggleDiv('myContent');", class: "glyphicon glyphicon-filter"}
 
 	%div.main-container#recipeslist
 		%h1#homecategtheme Themes
