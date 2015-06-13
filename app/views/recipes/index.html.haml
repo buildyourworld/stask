@@ -21,9 +21,8 @@
 .row#downbar
 
 .row#indexlists
-	%button.btn.btn-default.btn-lg#butcat{"data-target" => "#modalcategories", "data-toggle" => "modal", :type => "button", class: "glyphicon glyphicon-filter"}
 	#modalcategories.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-		.modal-dialog#modalcontent
+		.modal-dialog
 			.modal-content
 				.modal-header
 					%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
@@ -33,6 +32,24 @@
 					%div#categorieslist
 						- Category.all.each do |category|
 							%h2= link_to category.name, recipes_path(category: category.name)
+				.modal-footer
+					.wide_wrapper
+						%nav.navigation
+							/ %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "FAQ"}
+							/ 	%i.fa.fa-question.fa-2x
+							%a{"data-placement" => "top", "data-toggle" => "tooltip", :onclick => "myFace()", :target => "_blank", :title => "Share infos !"}
+								%i.fa.fa-facebook-square.fa-2x.click
+							%a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "https://monolok.github.io/online", :target => "_blank", :title => "Meet the developer"}
+								%i.fa.fa-github.fa-2x
+							/ %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "Donate BTC !"}
+							/ 	%i.fa.fa-btc.fa-2x
+							%a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "mailto:jeanhuguesbc@hotmail.com", :title => "Say hi !"}
+								%i.fa.fa-paper-plane.fa-2x
+						.pad-left-footer
+							%i.fa.fa-copyright
+						.pad-left-footer StaskStact
+						.pad-left-footer= Time.now.year
+
 
 
 

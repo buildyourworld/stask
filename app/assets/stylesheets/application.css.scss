@@ -87,7 +87,6 @@ div.container.row {
 	padding-left: 0px;
 	padding-right: 0px;
 	width: 100%;
-	margin-top: 50px;
 }
 
 .main_content {
@@ -161,17 +160,31 @@ div.alert {
 	width: 100%;
 }
 
+#menu {
+}
+
 #butcat {
-	width: 50px;
+	width: 400px;
 	height: 50px;
+	display: -webkit-flex;
+	margin-left: 60px;
+}
+
+#butcat p {
+	margin-left: 20px;
 }
 
 .fade.in {
-	margin-top: 55px;
+	margin-top: 51px;
 }
 
-#modalcontent {
+.modal-content {
+	border-radius: 0px;
+}
+
+.modal-dialog {
 	width: 100%;
+	margin: 0px;
 }
 
 #homecategtheme {
@@ -194,7 +207,7 @@ div.alert {
 
 #indexthemes {
 	margin-bottom: 40px;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #c6cfdb;
 	padding: 15px 5px 25px;
 	width: 70%;
 }
@@ -209,38 +222,42 @@ div.alert {
 	background-color: #fff;
 	border-bottom: 1px solid #f0908d;
 	border-radius: none;
+	height: 70px;
 }
 
 #navcontainer {
 	width: 90%;
 }
 
-div.navbar-brand {
-	margin-left: 30px;
+#navbrand {
+	padding: 12px 5px;
+	height: 70px;
 }
 
-.navbar-brand a {
+#navbrand a {
 	color: #f0908d;
 	text-decoration: none;
 	font-family: Futura;
 	font-weight: 500;
+	font-size: 25px;
 }
 
-ul.nav.navbar-nav {
-	text-align: center;
-	float: none;
+#sign {
 	display: -webkit-inline-box;
-}
+	height: 70px;
+} 
 
-.navbar-default .navbar-nav li {
-	margin-left: 30px;
-	float: none;
-}
+#sign ul {
+	display: -webkit-inline-box;
+	height: 70px;
+	padding: 20px 5px;
+} 
 
-.navbar-default .navbar-nav li a {
+#sign li a {
 	color: black;
 	font-family: Avenir;
 	font-weight: 500;
+	padding: 20px 15px;
 }
 
 
@@ -489,6 +506,25 @@ div#step {
 	background-color: transparent;
 }
 
+.btn-default:hover {
+	color: black;
+	border: none;
+	background-color: transparent;
+}
+
+.btn-default:active {
+	color: black;
+	border: none;
+	background-color: transparent;
+}
+
+.btn-default:focus {
+	color: black;
+	border: none;
+	background-color: transparent;
+	outline:none;
+}
+
 input[type="submit"] {
 	color: black;
 	border: none;
@@ -588,24 +624,25 @@ footer #logo {
 }
 
 .navigation {
-    float: right;
+    text-align: center;
     padding: 0rem 2.5% 0px 0px;
 }
-footer .navigation {
+.navigation {
 	text-align: center;
 	float: none;
     font-family: "brandon-grotesque",sans-serif;
     font-weight: 700;
-    color: #4C5650;
+    color: black;
 }
-footer .navigation a {
-    color: #4C5650;
+.navigation a {
+    color: black;
     margin-left: 1.5rem;
+    margin-right: 15px;
     line-height: 1;
     display: inline-block;
 }
 .pad-left-footer {
-	padding-left: 18%;
+	float: left;
 }
 
 
@@ -765,6 +802,14 @@ footer .navigation a {
 /*	.aside-container {
 		display: none;
 	}*/
+
+
+	#butcat {
+	width: 100px;
+	height: 70px;
+	display: -webkit-flex;
+	margin-left: 20px;
+}
 
 	#recipeslist {
 		margin-left: 50px;

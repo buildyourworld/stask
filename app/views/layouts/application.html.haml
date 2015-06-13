@@ -7,17 +7,20 @@
 	= csrf_meta_tags
 
 %body
-	%nav.navbar.navbar-default.navbar-fixed-top.row#navhome
-		.col-xs-6.col-sm-8.col-md-9
-			.navbar-brand=link_to "Staskstact", root_path
+	.row.navbar-fixed-top#navhome
+		.col-xs-4.col-sm-5.col-md-5#menu
+			%button.btn.btn-default.btn-lg#butcat{"data-target" => "#modalcategories", "data-toggle" => "modal", :type => "button", class: "glyphicon glyphicon-th"} 
+				%p MENU
+		.col-xs-4.col-sm-4.col-md-4
+			%div#navbrand=link_to "Staskstact", root_path
 		- if user_signed_in?
-			.col-xs-6.col-sm-4.col-md-3
-				%ul.nav.navbar-nav
+			.col-xs-6.col-sm-3.col-md-3#sign
+				%ul
 					%li= link_to "New Theme", new_recipe_path
 					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
 		- else
-			.col-xs-6.col-sm-4.col-md-3
-				%ul.nav.navbar-nav
+			.col-xs-4.col-sm-3.col-md-3#sign
+				%ul
 					%li= link_to "Sign up", new_user_registration_path
 					%li= link_to "Sign in", new_user_session_path
 
@@ -25,22 +28,22 @@
 
 		= yield
 
-%footer
-	.wide_wrapper
-		%nav.navigation
-			/ %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "FAQ"}
-			/ 	%i.fa.fa-question.fa-2x
-			%a{"data-placement" => "top", "data-toggle" => "tooltip", :onclick => "myFace()", :target => "_blank", :title => "Share infos !"}
-				%i.fa.fa-facebook-square.fa-2x.click
-			%a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "https://monolok.github.io/online", :target => "_blank", :title => "Meet the developer"}
-				%i.fa.fa-github.fa-2x
-			/ %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "Donate BTC !"}
-			/ 	%i.fa.fa-btc.fa-2x
-			%a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "mailto:jeanhuguesbc@hotmail.com", :title => "Say hi !"}
-				%i.fa.fa-paper-plane.fa-2x
-	#logo
-		.pad-left-footer
-			%i.fa.fa-copyright
-		.pad-left-footer StaskStact
-		.pad-left-footer= Time.now.year
+/ %footer
+/ 	.wide_wrapper
+/ 		%nav.navigation
+/ 			/ %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "FAQ"}
+/ 			/ 	%i.fa.fa-question.fa-2x
+/ 			%a{"data-placement" => "top", "data-toggle" => "tooltip", :onclick => "myFace()", :target => "_blank", :title => "Share infos !"}
+/ 				%i.fa.fa-facebook-square.fa-2x.click
+/ 			%a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "https://monolok.github.io/online", :target => "_blank", :title => "Meet the developer"}
+/ 				%i.fa.fa-github.fa-2x
+/ 			/ %a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "#", :target => "_blank", :title => "Donate BTC !"}
+/ 			/ 	%i.fa.fa-btc.fa-2x
+/ 			%a{"data-placement" => "top", "data-toggle" => "tooltip", :href => "mailto:jeanhuguesbc@hotmail.com", :title => "Say hi !"}
+/ 				%i.fa.fa-paper-plane.fa-2x
+/ 	#logo
+/ 		.pad-left-footer
+/ 			%i.fa.fa-copyright
+/ 		.pad-left-footer StaskStact
+/ 		.pad-left-footer= Time.now.year
 
