@@ -175,7 +175,7 @@ div.alert {
 }
 
 .fade.in {
-	margin-top: 51px;
+	margin-top: 70px;
 }
 
 .modal-content {
@@ -282,6 +282,7 @@ a.carousel-control.right {
 	margin-left: none;
 	padding-left: 0px;
 	padding-right: 0px;
+	margin-top: 50px;
 }
 
 #catchphrase {
@@ -345,6 +346,11 @@ h1 {
 	padding: 0px 0px;
 	position: relative;
 	background-color: #e9dfe5;
+	margin-top: 70px;
+}
+
+div#infodirlists.row {
+	margin-top: 50px;
 }
 
 /*#infocontreinfo {
@@ -434,12 +440,17 @@ a#add_button.btn {
 	border: 2px solid #e9dfe5;
 }
 
+#infocontreinfo {
+	border-top: 1px solid transparent;
+}	
+
 #info {
 	margin-top: 50px;
-	display: -webkit-inline-box;
-	border-top: 1px solid transparent;
 }
 
+#votecontrebutton {
+	display: -webkit-inline-box;
+}
 
 #votes {
 	margin-right: 50px;
@@ -487,7 +498,6 @@ div#tips {
 }
 
 #tips {
-	display: -webkit-inline-box;
 	font-family: Avenir;
 }
 
@@ -498,6 +508,7 @@ div#step {
 
 #votes a {
 	font-size: 1em;
+	text-align: center;
 }
 
 .btn-default {
@@ -652,6 +663,10 @@ footer #logo {
 
 @media only screen and (max-width : 480px){
 
+	#screen {
+		margin-top: 90px;
+	}
+
 	div.navbar-brand {
 		margin-left: 0px;
 	}
@@ -683,6 +698,7 @@ footer #logo {
 
 	#themetitle_show {
 		background-color: #e9dfe5;
+		margin-top: 70px;
 	}
 
 	#recipe_info {
@@ -719,6 +735,10 @@ footer #logo {
 /* media queries small */
 
 @media only screen and (max-width : 768px){
+
+	#screen {
+		margin-top: 80px;
+	}
 	
 	div.navbar-brand {
 		margin-left: 0px;
@@ -750,7 +770,7 @@ footer #logo {
 	}
 
 	p#catchphrase {
-	line-height: 3em;
+	line-height: 0em;
 	font-size: 2em;
 	color: white;
 	font-family: Futura;
@@ -758,6 +778,7 @@ footer #logo {
 
 	#themetitle_show {
 		background-color: #e9dfe5;
+		margin-top: 70px;
 	}
 
 	#recipe_info {
@@ -795,6 +816,10 @@ footer #logo {
 
 @media only screen and (max-width : 1021px){
 
+	#screen {
+		margin-top: 70px;
+	}
+
 	div#indexlists.row {
 		margin-left: 0px;
 	}
@@ -826,7 +851,7 @@ footer #logo {
 	}*/
 
 	p#catchphrase {
-	line-height: 3em;
+	line-height: 0em;
 	font-size: 2em;
 	color: white;
 	font-family: Futura;
@@ -834,6 +859,7 @@ footer #logo {
 
 	#themetitle_show {
 		background-color: #e9dfe5;
+		margin-top: 70px;
 	}
 
 	#recipe_info {
