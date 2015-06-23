@@ -162,17 +162,7 @@ div.alert {
 
 #menu {
 	height: 100%;
-}
-
-#butcat {
-	width: 400px;
-	height: 100%;
-	display: -webkit-flex;
-	margin-left: 60px;
-}
-
-#butcat p {
-	margin-left: 20px;
+	font-size: 20px;
 }
 
 .fade.in {
@@ -230,6 +220,17 @@ div.alert {
 	width: 90%;
 }
 
+#butcat {
+	width: 400px;
+	height: 100%;
+	display: -webkit-flex;
+	margin-left: 60px;
+}
+
+#butcat p {
+	margin-left: 20px;
+}
+
 #navbrand {
 	padding: 12px 5px;
 	height: 70px;
@@ -259,6 +260,7 @@ div.alert {
 	font-family: Avenir;
 	font-weight: 500;
 	padding: 20px 15px;
+	font-size: 20px;
 }
 
 
@@ -362,9 +364,14 @@ div#infodirlists.row {
 	margin-top: 50px;
 }
 
-/*#infocontreinfo {
-	border-bottom: 1px solid grey;
-}*/
+#infocontreinfo {
+	display: -webkit-inline-box;
+	border: 1px solid #f2f2f2 ;
+	border-radius: 4px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
 
 #recipe_info {
 	width: 100%;
@@ -398,17 +405,21 @@ div#description {
 }
 
 #buttonscol {
-		background-color: white;
-		height: 40px;
-		margin-top: 50px;
+	background-color: white;
+	height: 40px;
+	margin-top: 80px;
 }
 
 div#informationslist.lists {
-	text-align: center;
+	width: 80%;
+	float: right;
+	margin-right: 80px;
 }
 
 div#directionslist.lists {
-	text-align: center;
+	width: 80%;
+	float: right;
+	margin-right: 80px;
 }
 
 #showlist {
@@ -449,30 +460,22 @@ a#add_button.btn {
 	border: 2px solid #e9dfe5;
 }
 
-#infocontreinfo {
-	border-top: 1px solid transparent;
-}	
-
 #info {
-	margin-top: 50px;
+	padding: 15px;
+	text-align: center;
 }
 
-#votecontrebutton {
-	display: -webkit-inline-box;
-}
-
-#votes {
-	margin-right: 50px;
-	margin-top: 25px;
+div#votes {
+	padding: 15px;
+	border-right: 1px solid #f2f2f2;
 }
 
 #contrebutton {
-	margin-left: 50px;
-	margin-top: 25px;
+	padding: 15px;
+	border-left: 1px solid #f2f2f2;
 }
 
 #linkinfo {
-	margin-top: 25px;
 }
 
 #linkinfo a {
@@ -482,12 +485,13 @@ a#add_button.btn {
 
 #contrelien {
 	color: black;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 
 #contrelien a {
 	color: #ee827c;
 	font-size: 1em;
+	margin-bottom: 15px;
 }
 
 #directions {
@@ -498,12 +502,10 @@ a#add_button.btn {
 	margin-top: 50px;
 }
 
-#directionslist div {
-	margin-top: 10px;
-}
-
 div#tips {
-	margin-bottom: 30px
+	margin-bottom: 30px;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
 }
 
 #tips {
@@ -513,6 +515,9 @@ div#tips {
 div#step {
 	font-size: 1.25em;
 	font-family: Avenir;
+	border-right: 1px solid #f2f2f2;
+	text-align: center;
+	padding: 15px;
 }
 
 #votes a {
@@ -563,7 +568,7 @@ ul {
 	list-style: none;
 }
 
-div.button.glyphicon.glyphicon-exclamation-sign {
+.i.fa.fa-ban {
 	cursor: pointer;
 	color: black;
 }
@@ -589,8 +594,10 @@ div.button.glyphicon.glyphicon-exclamation-sign {
 	box-shadow: none;
 }
 
-#add_button {
+#addshow {
 	margin-top: 30px;
+	width: 65%;
+	float: right;
 }
 
 .lists#directionslist {
@@ -673,6 +680,13 @@ footer #logo {
 
 @media only screen and (max-width : 480px){
 
+	#navhome {
+	background-color: #fff;
+	border-bottom: 1px solid #f0908d;
+	border-radius: none;
+	height: 100px;
+	}
+
 	#screen {
 		margin-top: 70px;
 	}
@@ -751,6 +765,13 @@ footer #logo {
 /* media queries small */
 
 @media only screen and (max-width : 768px){
+
+		#navhome {
+	background-color: #fff;
+	border-bottom: 1px solid #f0908d;
+	border-radius: none;
+	height: 80px;
+	}
 
 	#screen {
 		margin-top: 70px;
@@ -837,6 +858,7 @@ footer #logo {
 
 
 @media only screen and (max-width : 1021px){
+
 
 	#screen {
 		margin-top: 70px;
