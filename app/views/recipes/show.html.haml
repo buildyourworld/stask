@@ -67,6 +67,7 @@
 			- @direction_all.each do |direction|
 				%div.row#tips
 					%div.col-md-1#votes
+						%p Vote
 						= direction.get_upvotes.size
 						= link_to "", upvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-up"
 						= link_to "", downvote_direction_path(direction.id), class: "glyphicon glyphicon-thumbs-down"
